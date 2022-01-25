@@ -1,14 +1,24 @@
 module.exports = {
   siteMetadata: {
-      title: `KalkSpace`,
-    siteUrl: `https://www.yourdomain.tld`
+    title: `KalkSpace`,
+    siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: ["gatsby-plugin-sass", "gatsby-plugin-react-helmet", "gatsby-plugin-mdx", {
-    resolve: 'gatsby-source-filesystem',
-    options: {
-      "name": "pages",
-      "path": "./src/pages/"
+  plugins: [
+    "gatsby-plugin-sass",
+    "gatsby-plugin-react-helmet",
+    {
+      resolve: "gatsby-plugin-mdx",
+      options: {
+        extensions: [".md", ".mdx"],
+      },
     },
-    __key: "pages"
-  }]
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "blog",
+        path: "./content/blog",
+      },
+      __key: "blog",
+    },
+  ],
 };
