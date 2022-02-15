@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap");
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background-image: url("../images/ivana-cajina-asuyh-_ZX54-unsplash.jpg");
+  background-size: cover;
+  color: white;
+}
+
+a {
+  color: white;
+  text-underline-offset: 0.05em;
+}
+
+a.button {
+  color: #070d44;
+  background-color: white;
+  padding: 0.3em 1em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 4px solid;
+  padding: 1.5em;
+}
+
+p {
+  margin-top: 0;
+}
