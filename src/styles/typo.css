@@ -12,14 +12,6 @@ a {
   text-underline-offset: 0.05em;
 }
 
-a.button {
-  color: #070d44;
-  background-color: white;
-  padding: 0.3em 1em;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
 .section {
   display: flex;
   flex-direction: column;

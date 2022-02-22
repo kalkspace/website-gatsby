@@ -16,9 +16,6 @@ function styleguide() {
           dem Menschen arbeiten, ihre Ideen verwirklichen und sich gegenseitig
           bereichern können. Du findest uns hier:
         </p>
-        <a href="#" className="button">
-          mehr
-        </a>
       </div>
     </div>
   );
