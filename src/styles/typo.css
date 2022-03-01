@@ -2,8 +2,7 @@
 
 body {
   font-family: "Space Grotesk", sans-serif;
-  background-image: url("../images/ivana-cajina-asuyh-_ZX54-unsplash.jpg");
-  background-size: cover;
+  background: rgb(0, 3, 26);
   color: white;
 }
 
