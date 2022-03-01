@@ -1,11 +1,13 @@
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   padding: 1.25em 2.25em;
 }
 
 .logo {
   max-width: 50%;
+  max-height: 1.5em;
 }
 
 .menu {
