@@ -1,9 +1,9 @@
-import Link from "gatsby-link";
 import React from "react";
 
 import style from "./header.module.css";
 import logo from "../../images/kalkspace_fontlogo_white.svg";
 import { useState } from "react";
+import { useContext } from "react";
 
 const links = [
   { url: "/coworking", title: "Coworking" },
@@ -34,8 +34,25 @@ const IconButton = (props) => (
   <button className={style.iconButton} {...props} />
 );
 
+/** @typedef {{ to: string }} LinkProps */
+
+/** @type {React.FunctionComponent<LinkProps>} */
+const DefaultLink = ({ to, ...props }) => <a href={to} {...props} />;
+
+/** @type {React.Context<React.ComponentType<LinkProps>>} */
+const LinkContext = React.createContext(null);
+
+/**
+ * Use this to provide an alternative component to render links with
+ * Defaults to just using the `a` tag.
+ *
+ * Would likely be used to inject the gatsby `Link` component.
+ */
+export const LinkProvider = LinkContext.Provider;
+
 const Menu = ({ defaultOpen = false }) => {
   const [menuOpen, setMenuOpen] = useState(defaultOpen);
+  const Link = useContext(LinkContext) ?? DefaultLink;
   return menuOpen ? (
     <nav className={style.menu}>
       <IconButton onClick={() => setMenuOpen(false)}>
