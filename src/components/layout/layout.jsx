@@ -8,7 +8,7 @@ export const Layout = ({ children, heroImg }) => {
     <div className={styles.layout}>
       <div className={styles.container}>
         <Header />
-        <div className={styles.hero}>{heroImg}</div>
+        {heroImg && <div className={styles.hero}>{heroImg}</div>}
         {children}
       </div>
     </div>
