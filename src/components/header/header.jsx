@@ -30,6 +30,7 @@ const MenuCloseButton = () => (
   </svg>
 );
 
+/** @type {React.FC<{ [k: string]: any }>} */
 const IconButton = (props) => (
   <button className={style.iconButton} {...props} />
 );
@@ -40,7 +41,8 @@ const IconButton = (props) => (
 const DefaultLink = ({ to, ...props }) => <a href={to} {...props} />;
 
 /** @type {React.Context<React.ComponentType<LinkProps>>} */
-const LinkContext = React.createContext(null);
+/** @ts-ignore */
+const LinkContext = React.createContext(DefaultLink);
 
 /**
  * Use this to provide an alternative component to render links with

@@ -3,6 +3,7 @@ import styles from "./layout.module.css";
 
 import { Header } from "../header/header";
 
+/** @type {React.FC<{ heroImg?: React.ReactNode }>} */
 export const Layout = ({ children, heroImg }) => {
   return (
     <div className={styles.layout}>

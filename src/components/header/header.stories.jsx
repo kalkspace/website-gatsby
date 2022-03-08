@@ -7,6 +7,7 @@ export default {
   component: Header,
 };
 
+/** @type {import('@storybook/react').Story<{}>} */
 const Template = (args) => <Header {...args} />;
 
 export const Default = Template.bind({});

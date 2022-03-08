@@ -1,5 +1,6 @@
-import { useMemo } from "react";
+import React, { useMemo } from "react";
 
+/** @type {React.FC<{ [k: string]: any }>} */
 export const GenerativeStarBackground = (props) => {
   const background = useMemo(() => {
     return generateStars(window.innerWidth, window.innerHeight);
@@ -16,9 +17,16 @@ export const GenerativeStarBackground = (props) => {
   );
 };
 
+/**
+ * @param {number} width
+ * @param {number} height
+ */
 function generateStars(width, height) {
   const canvas = document.createElement("canvas");
   const stars = canvas.getContext("2d");
+  if (!stars) {
+    return
+  }
   const incrementCount = 1;
   canvas.width = width;
   canvas.height = height;

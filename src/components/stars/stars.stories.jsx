@@ -8,6 +8,7 @@ export default {
   component: GenerativeStarBackground,
 };
 
+/** @type {import('@storybook/react').Story<{}>} */
 const Template = (args) => <GenerativeStarBackground {...args} />;
 
 export const Default = Template.bind({});

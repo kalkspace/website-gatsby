@@ -10,6 +10,7 @@ export default {
   },
 };
 
+/** @type {import('@storybook/react').Story<{}>} */
 const Template = (args) => <Layout {...args} />;
 
 export const Default = Template.bind({});
