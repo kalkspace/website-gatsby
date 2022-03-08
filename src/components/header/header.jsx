@@ -53,23 +53,26 @@ export const LinkProvider = LinkContext.Provider;
 const Menu = ({ defaultOpen = false }) => {
   const [menuOpen, setMenuOpen] = useState(defaultOpen);
   const Link = useContext(LinkContext) ?? DefaultLink;
-  return menuOpen ? (
-    <nav className={style.menu}>
-      <IconButton onClick={() => setMenuOpen(false)}>
-        <MenuCloseButton />
+  return (
+    <>
+      {menuOpen && (
+        <nav className={style.menu}>
+          <IconButton onClick={() => setMenuOpen(false)}>
+            <MenuCloseButton />
+          </IconButton>
+          <ul>
+            {links.map(({ url, title }) => (
+              <li>
+                <Link to={url}>{title}</Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
+      <IconButton onClick={() => setMenuOpen(true)}>
+        <MenuOpenButton />
       </IconButton>
-      <ul>
-        {links.map(({ url, title }) => (
-          <li>
-            <Link to={url}>{title}</Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  ) : (
-    <IconButton onClick={() => setMenuOpen(true)}>
-      <MenuOpenButton />
-    </IconButton>
+    </>
   );
 };
 
