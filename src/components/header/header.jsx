@@ -76,7 +76,7 @@ const Menu = ({ defaultOpen = false }) => {
   );
 };
 
-export const Header = ({ menuOpen }) => {
+export const Header = ({ menuOpen = false }) => {
   return (
     <header className={style.header}>
       <img className={style.logo} src={`/${logo}`} alt="KalkSpace" />
