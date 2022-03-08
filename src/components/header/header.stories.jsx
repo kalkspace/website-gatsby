@@ -5,9 +5,6 @@ import { Header } from "./header";
 export default {
   title: "Header",
   component: Header,
-  parameters: {
-    layout: "fullscreen",
-  },
 };
 
 const Template = (args) => <Header {...args} />;

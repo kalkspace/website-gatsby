@@ -1,0 +1,29 @@
+.layout {
+  --container-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.container {
+  /* Adjust the media query along with the width! */
+  width: 400px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 1em 0.5em;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  margin: 0 -1em 1em;
+}
+
+@media (min-width: 400px) {
+  .hero {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
