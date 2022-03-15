@@ -15,6 +15,7 @@ const Template = (args) => (
 );
 
 export const Default = Template.bind({});
+/** @type {React.ComponentProps<import('./map').Map>} */
 Default.args = {
   position: [50.940569, 7.019904],
   zoom: 16,
@@ -23,6 +24,7 @@ Default.args = {
 };
 
 export const WithPopup = Template.bind({});
+/** @type {React.ComponentProps<import('./map').Map>} */
 WithPopup.args = {
   position: [50.940569, 7.019904],
   zoom: 16,
