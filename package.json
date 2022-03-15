@@ -24,10 +24,12 @@
     "gatsby-plugin-react-helmet": "^5.6.0",
     "gatsby-plugin-sass": "^5.6.0",
     "gatsby-source-filesystem": "^4.6.0",
+    "leaflet": "^1.7.1",
     "modern-normalize": "^1.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
+    "react-leaflet": "^3.2.5",
     "sass": "^1.49.0"
   },
   "devDependencies": {
@@ -40,6 +42,7 @@
     "@storybook/manager-webpack5": "^6.4.19",
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "^0.0.9",
+    "@types/leaflet": "^1.7.9",
     "babel-loader": "^8.2.3",
     "typescript": "^4.6.2",
     "typescript-plugin-css-modules": "^3.4.0"
