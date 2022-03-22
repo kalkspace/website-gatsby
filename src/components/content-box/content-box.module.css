@@ -8,6 +8,8 @@
   padding: var(--box-padding);
 }
 
+.mode-full {}
+
 .mode-left {
   margin-left: -5em;
   padding-left: 5em;

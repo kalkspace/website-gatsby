@@ -3,6 +3,7 @@ import React from "react";
 
 import * as styles from "./content-box.module.css";
 
+/** @type {Record<string, "Full" | "Left" | "Center" | "Right">} */
 export const MODE = Object.freeze({
   full: "Full",
   left: "Left",
@@ -10,7 +11,10 @@ export const MODE = Object.freeze({
   right: "Right",
 });
 
-/** @type {React.FC<{ mode?: keyof MODE }>} */
+/** @type {(mode: MODE[keyof MODE]) => keyof styles} */
+const modeStyle = (mode) => `mode${mode}`;
+
+/** @type {React.FC<{ mode?: MODE[keyof MODE] }>} */
 export const ContentBox = ({ children, mode = MODE.full }) => {
-  return <div className={clsx(styles.box, styles[`mode${mode}`])}>{children}</div>;
+  return <div className={clsx(styles.box, modeStyle(mode))}>{children}</div>;
 };
