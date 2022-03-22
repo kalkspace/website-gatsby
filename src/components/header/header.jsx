@@ -1,6 +1,6 @@
 import React from "react";
 
-import style from "./header.module.css";
+import * as style from "./header.module.css";
 import logo from "../../images/kalkspace_fontlogo_white.svg";
 import { useState } from "react";
 import { useContext } from "react";
