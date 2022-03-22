@@ -11,8 +11,8 @@ export const MODE = Object.freeze({
   right: "Right",
 });
 
-/** @type {(mode: MODE[keyof MODE]) => keyof styles} */
-const modeStyle = (mode) => `mode${mode}`;
+/** @type {(mode: MODE[keyof MODE]) => string} */
+const modeStyle = (mode) => styles[`mode${mode}`];
 
 /** @type {React.FC<{ mode?: MODE[keyof MODE], sideImage?: React.ReactNode }>} */
 export const ContentBox = ({ children, mode = MODE.full, sideImage }) => {
