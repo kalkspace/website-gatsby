@@ -14,7 +14,12 @@ export const MODE = Object.freeze({
 /** @type {(mode: MODE[keyof MODE]) => keyof styles} */
 const modeStyle = (mode) => `mode${mode}`;
 
-/** @type {React.FC<{ mode?: MODE[keyof MODE] }>} */
-export const ContentBox = ({ children, mode = MODE.full }) => {
-  return <div className={clsx(styles.box, modeStyle(mode))}>{children}</div>;
+/** @type {React.FC<{ mode?: MODE[keyof MODE], sideImage?: React.ReactNode }>} */
+export const ContentBox = ({ children, mode = MODE.full, sideImage }) => {
+  return (
+    <div className={styles.wrapper}>
+      <div className={clsx(styles.box, modeStyle(mode))}>{children}</div>
+      {sideImage && <div className={styles.sideImage}>{sideImage}</div>}
+    </div>
+  );
 };
