@@ -14,12 +14,12 @@
 
 .mode-full {}
 
-.mode-left {
+.mode-left .box {
   margin-left: -5em;
   padding-left: 5em;
 }
 
-.mode-right {
+.mode-right .box {
   margin-right: -5em;
   padding-right: 5em;
 }
@@ -30,33 +30,35 @@
 }
 
 @media (min-width: 400px) {
-  .mode-left {
+  .mode-left .box {
     margin-right: 33%;
   }
 
-  .mode-center {
+  .mode-center .box {
     margin: 0 auto;
   }
 
-  .mode-right {
+  .mode-right .box {
     margin-left: 33%;
   }
 }
 
 @media (min-width: 600px) {
   /* resets mobile styles */
-  .mode-left {
+  .mode-left .box {
     margin-left: 0;
     margin-right: auto;
     padding-left: var(--box-padding);
   }
-  .mode-right {
+  .mode-right .box {
     margin-left: auto;
     margin-right: 0;
     padding-right: var(--box-padding);
   }
 
-  .mode-left, .mode-center, .mode-right {
+  .mode-left .box,
+  .mode-center .box,
+  .mode-right .box {
     width: 50%;
   }
 }

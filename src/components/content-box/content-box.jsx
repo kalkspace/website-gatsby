@@ -17,8 +17,8 @@ const modeStyle = (mode) => styles[`mode${mode}`];
 /** @type {React.FC<{ mode?: MODE[keyof MODE], sideImage?: React.ReactNode }>} */
 export const ContentBox = ({ children, mode = MODE.full, sideImage }) => {
   return (
-    <div className={styles.wrapper}>
-      <div className={clsx(styles.box, modeStyle(mode))}>{children}</div>
+    <div className={clsx(styles.wrapper, modeStyle(mode))}>
+      <div className={styles.box}>{children}</div>
       {sideImage && <div className={styles.sideImage}>{sideImage}</div>}
     </div>
   );
