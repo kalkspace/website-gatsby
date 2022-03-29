@@ -31,7 +31,7 @@
 
 @media (min-width: 400px) {
   .mode-left .box {
-    margin-right: 33%;
+    margin-right: 20%;
   }
 
   .mode-center .box {
@@ -39,7 +39,7 @@
   }
 
   .mode-right .box {
-    margin-left: 33%;
+    margin-left: 20%;
   }
 }
 
