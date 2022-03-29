@@ -58,3 +58,6 @@ InLayout.args = {
   mode: MODE.right,
   sideImage: <img src={exampleImage} />,
 };
+InLayout.parameters = {
+  layout: "fullscreen",
+}
