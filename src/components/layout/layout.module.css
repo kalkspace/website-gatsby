@@ -8,7 +8,7 @@
 
 .container {
   /* Adjust the media query along with the width! */
-  width: 400px;
+  width: 800px;
   max-width: 100%;
   display: flex;
   flex-direction: column;
