@@ -2,8 +2,10 @@ import * as React from "react";
 
 import { Layout } from "../components/layout/layout";
 import { GenerativeStarBackground } from "../components/stars/stars";
+import { TitleBox } from "../components/title-box/title-box";
 
 import heroImg from "../images/kalkspace_interior1.jpg";
+import * as styles from "./index.module.css"
 
 const IndexPage = () => {
   return (
@@ -15,7 +17,11 @@ const IndexPage = () => {
             alt="Innenansicht des KalkSpace: Blick auf die Küche, mit einem großen Esstisch."
           />
         }
-      ></Layout>
+      >
+        <div className={styles.titleBoxWrapper}>
+          <TitleBox titles={["hack", "coworking", "community"]} />
+        </div>
+      </Layout>
     </GenerativeStarBackground>
   );
 };
