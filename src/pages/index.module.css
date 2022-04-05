@@ -1,0 +1,14 @@
+.title-box-wrapper {
+  display: flex;
+  margin-top: -2em;
+}
+
+.title-box-wrapper::before {
+  content: " ";
+  flex: 3;
+}
+
+.title-box-wrapper::after {
+  content: " ";
+  flex: 5;
+}

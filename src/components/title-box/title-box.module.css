@@ -1,0 +1,40 @@
+.title-box {
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: center;
+  border: 6px solid;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.pink {
+  background-color: #ff99cc;
+}
+
+.rotator {
+  margin-top: -0.25em;
+  max-height: 1.5em;
+  overflow: hidden;
+  text-align: right;
+  position: relative;
+
+  --gradient: linear-gradient(transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: var(--gradient);
+  mask-image: var(--gradient);
+}
+
+.rotator > * {
+  position: relative;
+  display: block;
+  height: 2em;
+  top: -4em;
+  animation: rotation 5s infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes rotation {
+  0% { top: 0; }
+  100% { top: calc((var(--element-count) * -2em) + 2em) }
+}
