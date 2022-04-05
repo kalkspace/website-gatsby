@@ -19,7 +19,10 @@
   overflow: hidden;
   text-align: right;
   position: relative;
-  -webkit-mask-image: linear-gradient(transparent, black 20%, black 80%, transparent);
+
+  --gradient: linear-gradient(transparent, black 20%, black 80%, transparent);
+  -webkit-mask-image: var(--gradient);
+  mask-image: var(--gradient);
 }
 
 .rotator > * {
