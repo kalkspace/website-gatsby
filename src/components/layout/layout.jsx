@@ -10,7 +10,7 @@ export const Layout = ({ children, heroImg }) => {
       <div className={styles.container}>
         <Header />
         {heroImg && <div className={styles.hero}>{heroImg}</div>}
-        {children}
+        <main className={styles.main}>{children}</main>
       </div>
     </div>
   );

@@ -3,13 +3,16 @@ import React, { useMemo } from "react";
 /** @type {React.FC<{ [k: string]: any }>} */
 export const GenerativeStarBackground = (props) => {
   const background = useMemo(() => {
+    if (typeof window === "undefined") {
+      return "";
+    }
     return generateStars(window.innerWidth, window.innerHeight);
   }, []);
   return (
     <div
       {...props}
       style={{
-        background: `url(${background})`,
+        background: background && `url(${background})`,
         width: "100vw",
         height: "100vh",
       }}
@@ -25,7 +28,7 @@ function generateStars(width, height) {
   const canvas = document.createElement("canvas");
   const stars = canvas.getContext("2d");
   if (!stars) {
-    return
+    return;
   }
   const incrementCount = 1;
   canvas.width = width;
@@ -37,7 +40,7 @@ function generateStars(width, height) {
         const drawRND = Math.floor(Math.random() * 100 + 1);
 
         if (drawRND <= 50) {
-					const opacity = Math.random() + 0.5;
+          const opacity = Math.random() + 0.5;
           const colornum = Math.floor(Math.random() * 255 + 1);
           stars.fillStyle = `rgba(${colornum},${colornum},${colornum},${opacity})`;
           stars.fillRect(x, y, Math.random() + 1, Math.random() + 1);

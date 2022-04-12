@@ -12,3 +12,28 @@
   content: " ";
   flex: 5;
 }
+
+.map-box {
+  --map-height: 16em;
+  padding-bottom: calc(var(--map-height) / 2 - var(--box-padding));
+}
+
+.map-container {
+  margin-bottom: calc((var(--map-height) / 2) * -1 - var(--box-padding));
+  width: 100%;
+  height: var(--map-height);
+}
+
+@media (min-width: 600px) {
+  .map-box {
+    --map-height: 20em;
+  }
+
+  .map-container {
+    width: 50%;
+  }
+}
+
+.robot-image {
+  max-height: 12em;
+}

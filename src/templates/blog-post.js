@@ -2,8 +2,8 @@ import React from "react";
 import { graphql } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
+/** @type {React.FC<{ data: any }>} */
 const BlogPost = (props) => {
-  console.log(props);
   return (
     <>
       <h1>{props.data.mdx.frontmatter.title}</h1>
