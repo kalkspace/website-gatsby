@@ -4,11 +4,14 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import logoSkizze from "../../images/logo_skizze_weiss.svg";
 
-var logoIcon = icon({
-  iconUrl: logoSkizze,
-  iconSize: [38, 38],
-  popupAnchor: [0, -19],
-});
+const logoIcon =
+  typeof window === "undefined"
+    ? null
+    : icon({
+        iconUrl: logoSkizze,
+        iconSize: [38, 38],
+        popupAnchor: [0, -19],
+      });
 
 /** @type {React.FC<{
   position: [number, number],
