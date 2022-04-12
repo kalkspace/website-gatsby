@@ -1,7 +1,9 @@
 .button {
   color: #070d44;
   background-color: white;
+  margin: 0.5em 0;
   padding: 0.3em 1em;
   text-transform: uppercase;
   text-decoration: none;
+  align-self: center;
 }
