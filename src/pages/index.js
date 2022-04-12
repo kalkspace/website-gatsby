@@ -8,7 +8,7 @@ import { Map } from "../components/map/map";
 import { Button } from "../components/button/button";
 
 import heroImg from "../images/kalkspace_interior1.jpg";
-import blogImg from "../images/rC3-robots.jpg";
+import blogImg from "../images/rc3-robots.jpg";
 import roboImg from "../images/robot.png";
 import blumeImg from "../images/blume.png";
 import space1 from "../images/kalkspace_sternenposter.jpg";
