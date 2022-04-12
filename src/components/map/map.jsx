@@ -24,6 +24,10 @@ export const Map = ({
   scrollWheelZoom,
   popupText,
 }) => {
+  if (typeof window === undefined) {
+    return <></>;
+  }
+
   return (
     <MapContainer
       center={position}
