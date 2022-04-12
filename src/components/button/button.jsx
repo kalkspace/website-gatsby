@@ -1,8 +1,10 @@
+import React from "react";
 import * as styles from "./button.module.css";
 
+/** @type {React.FC<{ label: string; url: string }>} */
 export const Button = (props) => {
   return (
-    <a href="#" className={styles.button} role="button">
+    <a href={props.url} className={styles.button} role="button">
       {props.label}
     </a>
   );
