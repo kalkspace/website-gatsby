@@ -21,6 +21,16 @@ const Template = (args) => <TitleBox titles={defaultTitles} {...args} />;
 export const Default = Template.bind({});
 Default.args = {};
 
+export const MoreTitles = Template.bind({});
+MoreTitles.args = {
+  titles: ["coworking", "chill", "hacker", "hackerin", "sofa"],
+};
+
+export const Slow = Template.bind({});
+Slow.args = {
+  animationIntervalMs: 4000,
+};
+
 export const Pink = Template.bind({});
 Pink.args = {
   pink: true,
