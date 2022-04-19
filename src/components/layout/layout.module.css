@@ -21,6 +21,11 @@
   margin: 0 -1em 1em;
 }
 
+.hero img {
+  height: auto;
+  max-width: 100%;
+}
+
 @media (min-width: 400px) {
   .hero {
     margin-left: 0;
