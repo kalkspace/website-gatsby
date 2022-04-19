@@ -26,6 +26,11 @@ MoreTitles.args = {
   titles: ["coworking", "chill", "hacker", "hackerin", "sofa"],
 };
 
+export const Slow = Template.bind({});
+Slow.args = {
+  animationIntervalMs: 4000,
+};
+
 export const Pink = Template.bind({});
 Pink.args = {
   pink: true,
