@@ -178,7 +178,7 @@ const IndexPage = () => {
             Künstler*innen, Programmierer*innen, Lehrende und Lernende.
           </p>
           <div className={styles.team}>
-            <div>
+            <div className={styles.teamMember}>
               <img
                 src={penny}
                 alt="Avatar-Bild von Patricia Ennebach"
@@ -193,7 +193,7 @@ const IndexPage = () => {
                 (Fuck Cologne), Code4kids und Open Data.
               </p>
             </div>
-            <div>
+            <div className={styles.teamMember}>
               <img
                 src={mop}
                 alt="Avatar-Bild von Andreas Streichardt"
@@ -207,7 +207,7 @@ const IndexPage = () => {
                 Fahrradkette statt Blockchain.
               </p>
             </div>
-            <div>
+            <div className={styles.teamMember}>
               <img
                 src={christine}
                 alt="Avatar-Bild von Christine Gotthardt"
@@ -222,7 +222,7 @@ const IndexPage = () => {
                 Geduld.
               </p>
             </div>
-            <div>
+            <div className={styles.teamMember}>
               <img
                 src={marcus}
                 alt="Avatar-Bild von Marcus Weiner"
