@@ -2,6 +2,7 @@
 
 body {
   font-family: "Space Grotesk", sans-serif;
+  line-height: 1.2em;
   background: rgb(0, 3, 26);
   color: white;
   overflow-x: hidden;
@@ -25,7 +26,8 @@ p {
   margin-top: 0;
 }
 
-h2, h3 {
+h2,
+h3 {
   margin: 0 0 .5em 0;
 }
 

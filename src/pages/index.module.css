@@ -37,3 +37,38 @@
 .robot-image {
   max-height: 12em;
 }
+
+.partner-logo {
+  max-width: 100%;
+  margin: 2rem 0;
+}
+
+.team {
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  width: 100%;
+}
+
+@media (min-width: 800px) {
+  .team-member {
+    width: 50%;
+    padding: 1rem;
+  }
+}
+
+.team-avatar {
+  border-radius: 50%;
+  height: 8rem;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.team-name {
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+}
