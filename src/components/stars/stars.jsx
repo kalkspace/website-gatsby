@@ -13,8 +13,8 @@ export const GenerativeStarBackground = (props) => {
       {...props}
       style={{
         background: background && `url(${background})`,
-        width: "100vw",
-        height: "100vh",
+        width: "100%",
+        height: "100%",
       }}
     />
   );
