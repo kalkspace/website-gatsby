@@ -7,8 +7,8 @@ import { useContext } from "react";
 
 const links = [
   { url: "/coworking", title: "Coworking" },
-  { url: "/blog", title: "Blog" },
   { url: "/community", title: "Community" },
+  { url: "/blog", title: "Blog" },
   { url: "/events", title: "Events" },
 ];
 
