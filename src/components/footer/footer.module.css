@@ -1,0 +1,22 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  padding: 1rem 2rem;
+}
+
+.footer-logo {
+  width: 10em;
+}
+
+.footer-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li:not(:last-child) {
+  margin-right: 1rem;
+}
