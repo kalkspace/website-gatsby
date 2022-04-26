@@ -1,6 +1,7 @@
 const path = require("path");
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
+/** @type {import("gatsby").GatsbyNode["createPages"]} */
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions;
   // Query for markdown nodes to use in creating pages.
@@ -42,4 +43,19 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     });
   });
+};
+
+/** @type {import("gatsby").GatsbyNode["onCreateWebpackConfig"]} */
+exports.onCreateWebpackConfig = ({ getConfig, stage, loaders, actions }) => {
+  if (stage === "build-html" || stage === "develop-html") {
+    const config = getConfig();
+    actions.setWebpackConfig({
+      externals: [
+        {
+          canvas: "commonjs canvas",
+        },
+        ...config.externals,
+      ],
+    });
+  }
 };

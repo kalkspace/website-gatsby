@@ -1,22 +1,51 @@
-import React, { useMemo } from "react";
+import React, {
+  useMemo,
+  useRef,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
+import { createCanvas } from "canvas";
+
+import * as styles from "./stars.module.css";
+
+const tileSize = {
+  width: 200,
+  height: 200,
+};
 
 /** @type {React.FC<{ [k: string]: any }>} */
-export const GenerativeStarBackground = (props) => {
+export const GenerativeStarBackground = ({ children, ...props }) => {
   const background = useMemo(() => {
-    if (typeof window === "undefined") {
-      return "";
-    }
-    return generateStars(window.innerWidth, window.innerHeight);
+    return generateStars(tileSize.width, tileSize.height);
   }, []);
+
+  const [bgHeight, setBgHeight] = useState(0);
+  /** @type {import("react").MutableRefObject<HTMLDivElement | null>} */
+  const contentRef = useRef(null);
+  const updater = useCallback(() => {
+    if (contentRef.current) {
+      const bb = contentRef.current.getBoundingClientRect();
+      setBgHeight(bb.height);
+    }
+  }, []);
+  useEffect(() => {
+    window.addEventListener("resize", updater);
+    updater();
+    return () => window.removeEventListener("resize", updater);
+  }, []);
+
   return (
-    <div
-      {...props}
-      style={{
-        background: background && `url(${background})`,
-        width: "100vw",
-        height: "100vh",
-      }}
-    />
+    <div {...props} className={styles.wrapper}>
+      <div ref={contentRef}>{children}</div>
+      <div
+        className={styles.stars}
+        style={{
+          backgroundImage: background && `url(${background})`,
+          height: bgHeight || undefined,
+        }}
+      />
+    </div>
   );
 };
 
@@ -25,14 +54,24 @@ export const GenerativeStarBackground = (props) => {
  * @param {number} height
  */
 function generateStars(width, height) {
-  const canvas = document.createElement("canvas");
-  const stars = canvas.getContext("2d");
-  if (!stars) {
-    return;
+  /** @type {HTMLCanvasElement | import("canvas").Canvas} */
+  let canvas;
+  if (createCanvas) {
+    canvas = createCanvas(width, height);
+  } else {
+    canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
   }
+
+  const stars = /** @type {CanvasRenderingContext2D} */ (
+    canvas.getContext("2d")
+  );
+  if (!stars) {
+    throw new Error("Unable to get 2D Context");
+  }
+
   const incrementCount = 1;
-  canvas.width = width;
-  canvas.height = height;
   for (let x = 0; x < canvas.width; x = x + incrementCount) {
     for (let y = 0; y < canvas.height; y = y + incrementCount) {
       const columnRND = Math.floor(Math.random() * canvas.width + 1);
