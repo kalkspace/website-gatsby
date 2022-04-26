@@ -1,12 +1,15 @@
 import React, { useMemo } from "react";
+import { createCanvas } from "canvas";
+
+const tileSize = {
+  width: 200,
+  height: 200,
+};
 
 /** @type {React.FC<{ [k: string]: any }>} */
 export const GenerativeStarBackground = (props) => {
   const background = useMemo(() => {
-    if (typeof window === "undefined") {
-      return "";
-    }
-    return generateStars(window.innerWidth, window.innerHeight);
+    return generateStars(tileSize.width, tileSize.height);
   }, []);
   return (
     <div
@@ -25,14 +28,24 @@ export const GenerativeStarBackground = (props) => {
  * @param {number} height
  */
 function generateStars(width, height) {
-  const canvas = document.createElement("canvas");
-  const stars = canvas.getContext("2d");
-  if (!stars) {
-    return;
+  /** @type {HTMLCanvasElement | import("canvas").Canvas} */
+  let canvas;
+  if (createCanvas) {
+    canvas = createCanvas(width, height);
+  } else {
+    canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
   }
+
+  const stars = /** @type {CanvasRenderingContext2D} */ (
+    canvas.getContext("2d")
+  );
+  if (!stars) {
+    throw new Error("Unable to get 2D Context");
+  }
+
   const incrementCount = 1;
-  canvas.width = width;
-  canvas.height = height;
   for (let x = 0; x < canvas.width; x = x + incrementCount) {
     for (let y = 0; y < canvas.height; y = y + incrementCount) {
       const columnRND = Math.floor(Math.random() * canvas.width + 1);
