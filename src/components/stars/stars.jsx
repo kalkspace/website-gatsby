@@ -1,5 +1,13 @@
-import React, { useMemo } from "react";
+import React, {
+  useMemo,
+  useRef,
+  useState,
+  useEffect,
+  useCallback,
+} from "react";
 import { createCanvas } from "canvas";
+
+import * as styles from "./stars.module.css";
 
 const tileSize = {
   width: 200,
@@ -7,19 +15,37 @@ const tileSize = {
 };
 
 /** @type {React.FC<{ [k: string]: any }>} */
-export const GenerativeStarBackground = (props) => {
+export const GenerativeStarBackground = ({ children, ...props }) => {
   const background = useMemo(() => {
     return generateStars(tileSize.width, tileSize.height);
   }, []);
+
+  const [bgHeight, setBgHeight] = useState(0);
+  /** @type {import("react").MutableRefObject<HTMLDivElement | null>} */
+  const contentRef = useRef(null);
+  const updater = useCallback(() => {
+    if (contentRef.current) {
+      const bb = contentRef.current.getBoundingClientRect();
+      setBgHeight(bb.height);
+    }
+  }, []);
+  useEffect(() => {
+    window.addEventListener("resize", updater);
+    updater();
+    return () => window.removeEventListener("resize", updater);
+  }, []);
+
   return (
-    <div
-      {...props}
-      style={{
-        background: background && `url(${background})`,
-        width: "100vw",
-        height: "100vh",
-      }}
-    />
+    <div {...props} className={styles.wrapper}>
+      <div ref={contentRef}>{children}</div>
+      <div
+        className={styles.stars}
+        style={{
+          backgroundImage: background && `url(${background})`,
+          height: bgHeight || undefined,
+        }}
+      />
+    </div>
   );
 };
 
