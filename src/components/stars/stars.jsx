@@ -10,8 +10,8 @@ import { createCanvas } from "canvas";
 import * as styles from "./stars.module.css";
 
 const tileSize = {
-  width: 200,
-  height: 200,
+  width: 400,
+  height: 400,
 };
 
 /** @type {React.FC<{ [k: string]: any }>} */
@@ -33,11 +33,37 @@ export const GenerativeStarBackground = ({ children, ...props }) => {
     window.addEventListener("resize", updater);
     updater();
     return () => window.removeEventListener("resize", updater);
-  }, []);
+  }, [updater]);
+
+  const boxShadows = useMemo(
+    () =>
+      typeof window === "undefined"
+        ? ""
+        : generateBoxShadow(document.body.clientWidth, bgHeight),
+    [typeof window, bgHeight]
+  );
 
   return (
     <div {...props} className={styles.wrapper}>
       <div ref={contentRef}>{children}</div>
+      <div
+        style={{ height: bgHeight || undefined }}
+        className={styles.cloudWrapper}
+      >
+        <div style={{ boxShadow: boxShadows }} className={styles.cloud}></div>
+        <svg width="0">
+          <filter id="filter">
+            <feTurbulence
+              type="fractalNoise"
+              baseFrequency=".005"
+              numOctaves="10"
+              stitchTiles="stitch"
+            />
+            <feDisplacementMap in="SourceGraphic" scale="150" />
+          </filter>
+        </svg>
+      </div>
+
       <div
         className={styles.stars}
         style={{
@@ -92,4 +118,42 @@ function generateStars(width, height) {
     }
   }
   return canvas.toDataURL("image/png");
+}
+
+/**
+ * @param {number} from
+ * @param {number} to
+ * @returns {number}
+ */
+function rn(from, to) {
+  return Math.floor(Math.random() * (to - from + 1)) + from;
+}
+
+/**
+ * @template T
+ * @param  {...T} args
+ * @returns {T}
+ */
+function rs(...args) {
+  return args[rn(0, args.length - 1)];
+}
+
+/**
+ * @param {number} width width of area
+ * @param {number} height height of area
+ * @returns {string}
+ */
+function generateBoxShadow(width, height) {
+  let ret = [];
+  const max = height * 0.004;
+  for (let i = 0; i < max; ++i) {
+    ret.push(`
+      ${rn(1, width)}px ${rn(1, height)}px ${rn(
+      width * 0.02,
+      width * 0.05
+    )}vmin ${rn(width * 0.01, width * 0.02)}vmin
+      ${rs("#00A3A5", "#0093EA", "#E4C500", "#7E3806", "#2E2540", "#274492")}
+    `);
+  }
+  return ret.join(",");
 }
