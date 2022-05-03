@@ -79,9 +79,12 @@ const Menu = ({ defaultOpen = false }) => {
 };
 
 export const Header = ({ menuOpen = false }) => {
+  const Link = useContext(LinkContext) ?? DefaultLink;
   return (
     <header className={style.header}>
-      <img className={style.logo} src={logo} alt="KalkSpace" />
+      <Link to="/" className={style.logo}>
+        <img src={logo} alt="KalkSpace" />
+      </Link>
       <Menu defaultOpen={menuOpen} />
     </header>
   );
