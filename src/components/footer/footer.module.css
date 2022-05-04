@@ -1,20 +1,36 @@
 footer {
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   width: 100vw;
-  padding: 1rem 2rem;
+  padding: 1em;
+}
+
+@media (min-width: 800px) {
+  footer {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .footer-logo {
   width: 10em;
+  padding-top: 1rem;
 }
 
 .footer-links {
   display: flex;
+  flex-direction: column;
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+@media (min-width: 800px) {
+  .footer-links {
+    flex-direction: row;
+  }
 }
 
 .footer-links li:not(:last-child) {
