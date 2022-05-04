@@ -52,22 +52,6 @@ const CommunityPage = () => {
               praktizieren im Space “Do-ocracy”. Das heißt du kannst alles
               machen, was unserem (sehr breiten) Vereinszweck entspricht.
             </li>
-            <li>
-              <h3>Wie ist der Raum?</h3>
-              <p>
-                Im KalkSpace bewegen wir uns auf 2 Ebenen: dem DeepSpace (unten)
-                und dem WorkSpace (oben). Der DeepSpace befindet sich im
-                Souterrain, ist ca. 60m2 groß und hat Platz für Yoga, Meetups
-                bis ca. 20 Leute, Kleinkunst und eine Werkstatt.
-              </p>
-              <p>
-                Der WorkSpace befindet sich oben im Garagenhof. Er ist ebenfalls
-                ca. 60m2 groß, aufgeteilt auf 2 Räume. Im vorderen Raum befindet
-                sich die Küche, unser Küchentisch, eine Sitzecke und ein großer
-                Screen. Im hinteren Raum befinden sich die meisten
-                Coworking-Arbeitsplätze.
-              </p>
-            </li>
           </ul>
         </ContentBox>
         <ContentBox
@@ -125,6 +109,21 @@ const CommunityPage = () => {
             <li>Timeline</li>
           </ol>
           <Button label="Schau bei Github vorbei" url="#" />
+        </ContentBox>
+        <ContentBox mode="Center">
+          <h3>Wie ist der Raum?</h3>
+          <p>
+            Im KalkSpace bewegen wir uns auf 2 Ebenen: dem DeepSpace (unten) und
+            dem WorkSpace (oben). Der DeepSpace befindet sich im Souterrain, ist
+            ca. 60m2 groß und hat Platz für Yoga, Meetups bis ca. 20 Leute,
+            Kleinkunst und eine Werkstatt.
+          </p>
+          <p>
+            Der WorkSpace befindet sich oben im Garagenhof. Er ist ebenfalls ca.
+            60m2 groß, aufgeteilt auf 2 Räume. Im vorderen Raum befindet sich
+            die Küche, unser Küchentisch, eine Sitzecke und ein großer Screen.
+            Im hinteren Raum befinden sich die meisten Coworking-Arbeitsplätze.
+          </p>
         </ContentBox>
         <ContentBox
           mode="Right"
