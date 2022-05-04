@@ -17,13 +17,23 @@ export const TitleBox = ({ titles, pink = false, animationIntervalMs }) => {
   }
 
   return (
-    <div className={clsx(styles.titleBox, pink && styles.pink)}>
-      <div className={styles.rotator} style={inlineStyle}>
-        {animatedTitles.map((title) => (
-          <span>{title}</span>
-        ))}
+    <div className={styles.titleBoxWrapper}>
+      <div className={clsx(styles.titleBox, pink && styles.pink)}>
+        {titles.length > 1 ? (
+          <>
+            <div className={styles.rotator} style={inlineStyle}>
+              {animatedTitles.map((title) => (
+                <span>{title}</span>
+              ))}
+            </div>
+            space
+          </>
+        ) : (
+          <div className={styles.title}>
+            <span>{animatedTitles[0]}</span>
+          </div>
+        )}
       </div>
-      space
     </div>
   );
 };

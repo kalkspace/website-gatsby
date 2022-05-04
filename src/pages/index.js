@@ -32,9 +32,7 @@ const IndexPage = () => {
           />
         }
       >
-        <div className={styles.titleBoxWrapper}>
-          <TitleBox titles={["hack", "coworking", "community"]} />
-        </div>
+        <TitleBox titles={["hack", "coworking", "community"]} />
         <ContentBox boxClassName={styles.mapBox}>
           <h2>Hallo Welt</h2>
           <p>

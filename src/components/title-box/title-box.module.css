@@ -1,3 +1,18 @@
+.title-box-wrapper {
+  display: flex;
+  margin-top: -2em;
+}
+
+.title-box-wrapper::before {
+  content: " ";
+  flex: 3;
+}
+
+.title-box-wrapper::after {
+  content: " ";
+  flex: 5;
+}
+
 .title-box {
   padding: 1.5rem;
   font-size: 1.6rem;
@@ -11,6 +26,10 @@
 
 .pink {
   background-color: #ff99cc;
+}
+
+.title {
+  text-align: right;
 }
 
 .rotator {
