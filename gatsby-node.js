@@ -1,4 +1,39 @@
 const path = require("path");
+
+/** @type {import("gatsby").GatsbyNode["onCreateNode"]} */
+exports.onCreateNode = async ({
+  actions: { createNodeField },
+  node,
+  getNode,
+}) => {
+  if (node.internal.type === "Mdx") {
+    if (!node.parent) {
+      return;
+    }
+
+    const post =
+      /** @type {import("gatsby").Node & { frontmatter: { slug?: string }, slug: string }} */ (
+        node
+      );
+
+    let slug = post.frontmatter.slug;
+    if (!slug) {
+      const fileNode = getNode(node.parent);
+      if (!fileNode) {
+        return;
+      }
+      if (fileNode.name === "index") {
+        slug = /** @type {string} */ (fileNode.relativeDirectory);
+      } else {
+        slug = /** @type {string} */ (fileNode.name);
+      }
+    }
+    const path = `/blog/${slug}`;
+
+    createNodeField({ node, name: "urlPath", value: path });
+  }
+};
+
 // Implement the Gatsby API “createPages”. This is called once the
 // data layer is bootstrapped to let plugins create pages from data.
 /** @type {import("gatsby").GatsbyNode["createPages"]} */
@@ -11,13 +46,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         allMdx {
           nodes {
             id
-            frontmatter {
-              date
-              slug
-              title
+            fields {
+              urlPath
             }
-            slug
-            body
           }
         }
       }
@@ -32,9 +63,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create pages for each markdown file.
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
   result.data.allMdx.nodes.forEach((post) => {
-    const path = post.frontmatter.slug || post.slug;
     createPage({
-      path,
+      path: post.fields.urlPath,
       component: blogPostTemplate,
       // In your blog post template's graphql query, you can use pagePath
       // as a GraphQL variable to query for data from the markdown file.

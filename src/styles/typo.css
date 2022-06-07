@@ -2,7 +2,7 @@
 
 body {
   font-family: "Space Grotesk", sans-serif;
-  line-height: 1.2em;
+  line-height: 1.2;
   background: rgb(0, 3, 26);
   color: white;
   overflow-x: hidden;
@@ -28,7 +28,7 @@ p {
 
 h2,
 h3 {
-  margin: 0 0 .5em 0;
+  margin: 0 0 0.5em 0;
 }
 
 figure {
