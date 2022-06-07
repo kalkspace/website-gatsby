@@ -14,9 +14,7 @@ const EventPage = () => {
       })
       .then(function (result) {
         const futureEvents = result.events.filter(function (event) {
-          {
-            /* use yesterday's date for comparison so we don't filter out currently running events */
-          }
+          // use yesterday's date for comparison so we don't filter out currently running events
           const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000);
           return new Date(event.starts_at) > yesterday;
         });
