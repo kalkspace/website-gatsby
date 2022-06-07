@@ -3,6 +3,7 @@ import * as React from "react";
 import { Layout } from "../components/layout/layout";
 import { ContentBox } from "../components/content-box/content-box";
 import { Button } from "../components/button/button";
+import { TitleBox } from "../components/title-box/title-box";
 
 import heroImg from "../images/community.jpg";
 import stickerImg from "../images/sticker.png";
@@ -21,6 +22,7 @@ const CommunityPage = () => {
         />
       }
     >
+      <TitleBox>Community</TitleBox>
       <ContentBox mode="Full">
         <h1>Community</h1>
         <h2>Raum für Dinge. Und Menschen.</h2>

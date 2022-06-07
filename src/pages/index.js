@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import { Layout } from "../components/layout/layout";
-import { TitleBox } from "../components/title-box/title-box";
+import { TitleAnimator, TitleBox } from "../components/title-box/title-box";
 import { ContentBox } from "../components/content-box/content-box";
 import { Map } from "../components/map/map";
 import { Button } from "../components/button/button";
@@ -30,9 +30,9 @@ const IndexPage = () => {
         />
       }
     >
-      <div className={styles.titleBoxWrapper}>
-        <TitleBox titles={["hack", "coworking", "community"]} />
-      </div>
+      <TitleBox>
+        <TitleAnimator titles={["hack", "coworking", "community"]} />
+      </TitleBox>
       <ContentBox boxClassName={styles.mapBox}>
         <h2>Hallo Welt</h2>
         <p>
