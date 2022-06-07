@@ -42,7 +42,7 @@ const EventPage = () => {
   return (
     <GenerativeStarBackground>
       <Layout>
-        <TitleBox titles={["Events"]} />
+        <TitleBox>Events</TitleBox>
         <ContentBox mode="Full">
           <ul>
             {events?.map((event) => {
