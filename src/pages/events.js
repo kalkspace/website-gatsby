@@ -1,7 +1,6 @@
 import * as React from "react";
 
 import { Layout } from "../components/layout/layout";
-import { GenerativeStarBackground } from "../components/stars/stars";
 import { ContentBox } from "../components/content-box/content-box";
 import { TitleBox } from "../components/title-box/title-box";
 
@@ -40,34 +39,32 @@ const EventPage = () => {
   }, []);
 
   return (
-    <GenerativeStarBackground>
-      <Layout>
-        <TitleBox>Events</TitleBox>
-        <ContentBox mode="Full">
-          <ul>
-            {events?.map((event) => {
-              return (
-                <li key={event.post.url}>
-                  <p>
-                    {new Date(event.starts_at).toLocaleString("de", {
-                      weekday: "short",
-                      day: "2-digit",
-                      month: "2-digit",
-                      year: "numeric",
-                      hour: "2-digit",
-                      minute: "2-digit",
-                    })}
-                  </p>
-                  <a href={"https://discuss.kalk.space/" + event.post.url}>
-                    {event.post.topic.title}
-                  </a>
-                </li>
-              );
-            })}
-          </ul>
-        </ContentBox>
-      </Layout>
-    </GenerativeStarBackground>
+    <Layout>
+      <TitleBox>Events</TitleBox>
+      <ContentBox mode="Full">
+        <ul>
+          {events?.map((event) => {
+            return (
+              <li key={event.post.url}>
+                <p>
+                  {new Date(event.starts_at).toLocaleString("de", {
+                    weekday: "short",
+                    day: "2-digit",
+                    month: "2-digit",
+                    year: "numeric",
+                    hour: "2-digit",
+                    minute: "2-digit",
+                  })}
+                </p>
+                <a href={"https://discuss.kalk.space/" + event.post.url}>
+                  {event.post.topic.title}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </ContentBox>
+    </Layout>
   );
 };
 
