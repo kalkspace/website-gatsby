@@ -17,12 +17,17 @@ const defaultTitles = ["hack", "coworking", "community"];
 
 /** @type {import('@storybook/react').StoryFn<Partial<React.ComponentProps<typeof TitleBox> & React.ComponentProps<typeof TitleAnimator>>>} */
 const Template = ({ titles, animationIntervalMs, ...args }) => (
-  <TitleBox {...args}>
-    <TitleAnimator
-      titles={titles ?? defaultTitles}
-      animationIntervalMs={animationIntervalMs}
-    />
-  </TitleBox>
+  <>
+    <div
+      style={{ width: "100%", height: "4rem", backgroundColor: "red" }}
+    ></div>
+    <TitleBox {...args}>
+      <TitleAnimator
+        titles={titles ?? defaultTitles}
+        animationIntervalMs={animationIntervalMs}
+      />
+    </TitleBox>
+  </>
 );
 
 export const Default = Template.bind({});
