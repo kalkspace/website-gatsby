@@ -23,7 +23,7 @@ const CoworkingPage = () => {
           />
         }
       >
-        <TitleBox titles={["Coworking"]} />
+        <TitleBox>Coworking</TitleBox>
         <ContentBox mode="Full">
           <h2>Selbstverwaltet. Solidarisch.</h2>
           <p>

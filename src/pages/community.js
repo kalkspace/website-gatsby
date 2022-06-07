@@ -24,7 +24,7 @@ const CommunityPage = () => {
           />
         }
       >
-        <TitleBox titles={["Community"]} />
+        <TitleBox>Community</TitleBox>
         <ContentBox mode="Full">
           <h2>Raum für Dinge. Und Menschen.</h2>
           <ul>
