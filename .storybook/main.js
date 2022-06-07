@@ -9,6 +9,7 @@ module.exports = {
   core: {
     builder: "webpack5",
   },
+  typescript: { reactDocgen: false },
 
   webpackFinal: async (config) => {
     const styleLoader = require.resolve("style-loader");
