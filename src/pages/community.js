@@ -3,6 +3,7 @@ import * as React from "react";
 import { Layout } from "../components/layout/layout";
 import { ContentBox } from "../components/content-box/content-box";
 import { Button } from "../components/button/button";
+import { TitleBox } from "../components/title-box/title-box";
 
 import heroImg from "../images/community.jpg";
 import stickerImg from "../images/sticker.png";
@@ -21,6 +22,7 @@ const CommunityPage = () => {
         />
       }
     >
+      <TitleBox>Community</TitleBox>
       <ContentBox mode="Full">
         <h1>Community</h1>
         <h2>Raum für Dinge. Und Menschen.</h2>
@@ -48,22 +50,6 @@ const CommunityPage = () => {
             Lebensmittel retten, Malen, Löten, Pläne schmieden, etc. Wir
             praktizieren im Space “Do-ocracy”. Das heißt du kannst alles machen,
             was unserem (sehr breiten) Vereinszweck entspricht.
-          </li>
-          <li>
-            <h3>Wie ist der Raum?</h3>
-            <p>
-              Im KalkSpace bewegen wir uns auf 2 Ebenen: dem DeepSpace (unten)
-              und dem WorkSpace (oben). Der DeepSpace befindet sich im
-              Souterrain, ist ca. 60m2 groß und hat Platz für Yoga, Meetups bis
-              ca. 20 Leute, Kleinkunst und eine Werkstatt.
-            </p>
-            <p>
-              Der WorkSpace befindet sich oben im Garagenhof. Er ist ebenfalls
-              ca. 60m2 groß, aufgeteilt auf 2 Räume. Im vorderen Raum befindet
-              sich die Küche, unser Küchentisch, eine Sitzecke und ein großer
-              Screen. Im hinteren Raum befinden sich die meisten
-              Coworking-Arbeitsplätze.
-            </p>
           </li>
         </ul>
       </ContentBox>
@@ -122,6 +108,21 @@ const CommunityPage = () => {
           <li>Timeline</li>
         </ol>
         <Button label="Schau bei Github vorbei" url="#" />
+      </ContentBox>
+      <ContentBox mode="Center">
+        <h3>Wie ist der Raum?</h3>
+        <p>
+          Im KalkSpace bewegen wir uns auf 2 Ebenen: dem DeepSpace (unten) und
+          dem WorkSpace (oben). Der DeepSpace befindet sich im Souterrain, ist
+          ca. 60m2 groß und hat Platz für Yoga, Meetups bis ca. 20 Leute,
+          Kleinkunst und eine Werkstatt.
+        </p>
+        <p>
+          Der WorkSpace befindet sich oben im Garagenhof. Er ist ebenfalls ca.
+          60m2 groß, aufgeteilt auf 2 Räume. Im vorderen Raum befindet sich die
+          Küche, unser Küchentisch, eine Sitzecke und ein großer Screen. Im
+          hinteren Raum befinden sich die meisten Coworking-Arbeitsplätze.
+        </p>
       </ContentBox>
       <ContentBox
         mode="Right"

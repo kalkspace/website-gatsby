@@ -3,6 +3,7 @@ import * as React from "react";
 import { Layout } from "../components/layout/layout";
 import { ContentBox } from "../components/content-box/content-box";
 import { Button } from "../components/button/button";
+import { TitleBox } from "../components/title-box/title-box";
 
 import heroImg from "../images/coworking.jpg";
 import coffeeImg from "../images/coffee.png";
@@ -14,26 +15,14 @@ const CoworkingPage = () => {
   return (
     <Layout
       heroImg={
-        <figure>
-          <img
-            src={heroImg}
-            alt="Laptop und Cappuchino mit Schaumherz von oben"
-          />
-          <figcaption>
-            Photo by{" "}
-            <a href="https://unsplash.com/@nolanissac?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-              Nolan Issac
-            </a>{" "}
-            on{" "}
-            <a href="https://unsplash.com/s/photos/coffee-laptop?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">
-              Unsplash
-            </a>
-          </figcaption>
-        </figure>
+        <img
+          src={heroImg}
+          alt="Laptop und Cappuchino mit Schaumherz von oben"
+        />
       }
     >
+      <TitleBox>Coworking</TitleBox>
       <ContentBox mode="Full">
-        <h1>Coworking</h1>
         <h2>Selbstverwaltet. Solidarisch.</h2>
         <p>
           Als Verein machen wir Coworking ein bisschen anders. Weniger Geld

@@ -1,5 +1,5 @@
 import React from "react";
-import { TitleBox } from "./title-box";
+import { TitleAnimator, TitleBox } from "./title-box";
 
 export default {
   title: "Title Box",
@@ -15,8 +15,20 @@ export default {
 
 const defaultTitles = ["hack", "coworking", "community"];
 
-/** @type {import('@storybook/react').StoryFn<Partial<React.ComponentProps<typeof TitleBox>>>} */
-const Template = (args) => <TitleBox titles={defaultTitles} {...args} />;
+/** @type {import('@storybook/react').StoryFn<Partial<React.ComponentProps<typeof TitleBox> & React.ComponentProps<typeof TitleAnimator>>>} */
+const Template = ({ titles, animationIntervalMs, ...args }) => (
+  <>
+    <div
+      style={{ width: "100%", height: "4rem", backgroundColor: "red" }}
+    ></div>
+    <TitleBox {...args}>
+      <TitleAnimator
+        titles={titles ?? defaultTitles}
+        animationIntervalMs={animationIntervalMs}
+      />
+    </TitleBox>
+  </>
+);
 
 export const Default = Template.bind({});
 Default.args = {};
@@ -34,4 +46,10 @@ Slow.args = {
 export const Pink = Template.bind({});
 Pink.args = {
   pink: true,
+};
+
+/** @type {import('@storybook/react').StoryFn<{ caption: string }>} */
+export const NoAnimation = ({ caption }) => <TitleBox>{caption}</TitleBox>;
+NoAnimation.args = {
+  caption: "Hallo Welt!",
 };

@@ -18,7 +18,7 @@
 .hero {
   display: flex;
   flex-direction: column;
-  margin: 0 -1em 1em;
+  margin: 0 -1em;
 }
 
 .hero img {
