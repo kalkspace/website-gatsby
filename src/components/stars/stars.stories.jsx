@@ -12,9 +12,9 @@ export default {
 const Template = (args) => <GenerativeStarBackground {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {}
+Default.args = {};
 
 export const WithContent = Template.bind({});
 WithContent.args = {
-  children: <StyleGuide />
-}
+  children: <StyleGuide />,
+};
