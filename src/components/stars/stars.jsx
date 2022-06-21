@@ -35,11 +35,11 @@ export const GenerativeStarBackground = ({ children, ...props }) => {
     return () => window.removeEventListener("resize", updater);
   }, [updater]);
 
-  const boxShadows = useMemo(
+  const radialGradients = useMemo(
     () =>
       typeof window === "undefined"
         ? ""
-        : generateBoxShadow(document.body.clientWidth, bgHeight),
+        : generateRadialGradient(document.body.clientWidth, bgHeight),
     [typeof window, bgHeight]
   );
 
@@ -50,20 +50,11 @@ export const GenerativeStarBackground = ({ children, ...props }) => {
         style={{ height: bgHeight || undefined }}
         className={styles.cloudWrapper}
       >
-        <div style={{ boxShadow: boxShadows }} className={styles.cloud}></div>
-        <svg width="0">
-          <filter id="filter">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency=".005"
-              numOctaves="10"
-              stitchTiles="stitch"
-            />
-            <feDisplacementMap in="SourceGraphic" scale="150" />
-          </filter>
-        </svg>
+        <div
+          style={{ background: radialGradients }}
+          className={styles.cloud}
+        ></div>
       </div>
-
       <div
         className={styles.stars}
         style={{
@@ -143,17 +134,26 @@ function rs(...args) {
  * @param {number} height height of area
  * @returns {string}
  */
-function generateBoxShadow(width, height) {
+function generateRadialGradient(width, height) {
   let ret = [];
-  const max = height * 0.004;
+  const max = height * 0.007;
   for (let i = 0; i < max; ++i) {
-    ret.push(`
-      ${rn(1, width)}px ${rn(1, height)}px ${rn(
-      width * 0.02,
-      width * 0.05
-    )}vmin ${rn(width * 0.01, width * 0.02)}vmin
-      ${rs("#00A3A5", "#0093EA", "#E4C500", "#7E3806", "#2E2540", "#274492")}
-    `);
+    const color = rs(
+      [0, 163, 165],
+      [0, 147, 234],
+      [228, 197, 0],
+      [126, 56, 6],
+      [46, 37, 64],
+      [39, 68, 146]
+    );
+    ret.push(
+      `radial-gradient(circle ${rn(150, 350)}px at left ${rn(
+        1,
+        width
+      )}px top ${rn(1, height)}px, rgba(${color[0]},${color[1]},${
+        color[2]
+      },${rn(0.2, 0.4)}), transparent)`
+    );
   }
   return ret.join(",");
 }
