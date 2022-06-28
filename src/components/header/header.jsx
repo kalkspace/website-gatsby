@@ -37,12 +37,13 @@ const IconButton = (props) => (
 
 /** @typedef {{ to: string }} LinkProps */
 
-/** @type {React.FunctionComponent<LinkProps>} */
+/** @type {React.ComponentType<LinkProps>} */
 const DefaultLink = ({ to, ...props }) => <a href={to} {...props} />;
 
-/** @type {React.Context<React.ComponentType<LinkProps>>} */
-/** @ts-ignore */
-const LinkContext = React.createContext(DefaultLink);
+const LinkContext =
+  /** @type {React.Context<React.ComponentType<LinkProps>>} */ (
+    React.createContext(DefaultLink)
+  );
 
 /**
  * Use this to provide an alternative component to render links with
