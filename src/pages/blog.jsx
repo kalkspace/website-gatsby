@@ -1,5 +1,6 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
+import { GatsbyImage } from "gatsby-plugin-image";
 
 import { Layout } from "../components/layout/layout";
 import { ContentBox, MODE } from "../components/content-box/content-box";
@@ -14,7 +15,7 @@ import * as styles from "./blog.module.css";
     title: string,
     teaser: {
       src: {
-        publicURL: string
+        childImageSharp: import("gatsby-plugin-image/dist/src/components/hooks").IGatsbyImageDataParent<{}>
       }
       alt?: string
     } | null,
@@ -38,23 +39,27 @@ const formatDate = (dateStr) => {
 /** @type {React.FC<import("gatsby").PageProps<{ allMdx: BlogPostList }>>} */
 const BlogPage = ({ data }) => {
   const posts = data.allMdx.nodes.map(
-    ({ fields, frontmatter, id, excerpt }) => (
-      <Link to={fields.urlPath} key={id}>
-        <ContentBox innerClassName={styles.post} mode={MODE.Full}>
-          {frontmatter.teaser && (
-            <img
-              className={styles.teaser}
-              src={frontmatter.teaser.src.publicURL}
-            />
-          )}
-          <div>
-            <p>{formatDate(frontmatter.date)}</p>
-            <h3>{frontmatter.title}</h3>
-            <p>{excerpt}</p>
-          </div>
-        </ContentBox>
-      </Link>
-    )
+    ({ fields, frontmatter, id, excerpt }) => {
+      const image = frontmatter.teaser?.src?.childImageSharp?.gatsbyImageData;
+      return (
+        <Link to={fields.urlPath} key={id}>
+          <ContentBox innerClassName={styles.post} mode={MODE.Full}>
+            {image && (
+              <GatsbyImage
+                className={styles.teaser}
+                image={image}
+                alt={frontmatter.teaser?.alt ?? ""}
+              />
+            )}
+            <div>
+              <p>{formatDate(frontmatter.date)}</p>
+              <h3>{frontmatter.title}</h3>
+              <p>{excerpt}</p>
+            </div>
+          </ContentBox>
+        </Link>
+      );
+    }
   );
   return (
     <Layout>
@@ -76,7 +81,9 @@ export const query = graphql`
           title
           teaser {
             src {
-              publicURL
+              childImageSharp {
+                gatsbyImageData(layout: CONSTRAINED, width: 256)
+              }
             }
             alt
           }
