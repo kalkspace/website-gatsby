@@ -1,14 +1,10 @@
 import * as React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 import { Layout } from "../components/layout/layout";
 import { ContentBox } from "../components/content-box/content-box";
 import { Button } from "../components/button/button";
 import { TitleBox } from "../components/title-box/title-box";
-
-import heroImg from "../images/community.jpg";
-import stickerImg from "../images/sticker.png";
-import hammerImg from "../images/hammer.png";
-import halloImg from "../images/drawing.jpg";
 
 import * as styles from "./community.module.css";
 
@@ -16,9 +12,10 @@ const CommunityPage = () => {
   return (
     <Layout
       heroImg={
-        <img
-          src={heroImg}
+        <StaticImage
+          src={"../images/community.jpg"}
           alt="Chaos aus Roboter Bauteilen und Bastelkram auf Holztisch"
+          placeholder="blurred"
         />
       }
     >
@@ -56,9 +53,10 @@ const CommunityPage = () => {
       <ContentBox
         mode="Right"
         sideImage={
-          <img
-            src={stickerImg}
+          <StaticImage
+            src={"../images/sticker.png"}
             alt="Schreibtisch im KalkSpace, darüber Weltraum-Poster"
+            placeholder="none"
           />
         }
       >
@@ -92,7 +90,13 @@ const CommunityPage = () => {
       </ContentBox>
       <ContentBox
         mode="Left"
-        sideImage={<img src={hammerImg} alt="Pinkfarbener Hammer" />}
+        sideImage={
+          <StaticImage
+            src={"../images/hammer.png"}
+            alt="Pinkfarbener Hammer"
+            placeholder="none"
+          />
+        }
       >
         <h2>Infrastruktur:</h2>
         <p>
@@ -126,7 +130,13 @@ const CommunityPage = () => {
       </ContentBox>
       <ContentBox
         mode="Right"
-        sideImage={<img src={halloImg} alt="Pinkfarbener Hammer" />}
+        sideImage={
+          <StaticImage
+            src={"../images/drawing.jpg"}
+            alt="Pinkfarbener Hammer"
+            placeholder="none"
+          />
+        }
       >
         <h2>Mitmachen:</h2>
         <p>

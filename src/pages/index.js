@@ -1,4 +1,5 @@
 import * as React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 import { Layout } from "../components/layout/layout";
 import { TitleAnimator, TitleBox } from "../components/title-box/title-box";
@@ -6,27 +7,16 @@ import { ContentBox } from "../components/content-box/content-box";
 import { Map } from "../components/map/map";
 import { Button } from "../components/button/button";
 
-import heroImg from "../images/kalkspace_interior1.jpg";
-import blogImg from "../images/rc3-robots.jpg";
-import roboImg from "../images/robot.png";
-import blumeImg from "../images/blume.png";
-import space1 from "../images/kalkspace_sternenposter.jpg";
-import railsloveLogo from "../images/railslove_logo.png";
-import stormforgerLogo from "../images/stormforger_logo.png";
-import penny from "../images/penny.jpg";
-import marcus from "../images/marcus.jpg";
-import mop from "../images/mop.jpg";
-import christine from "../images/christine.png";
-
 import * as styles from "./index.module.css";
 
 const IndexPage = () => {
   return (
     <Layout
       heroImg={
-        <img
-          src={heroImg}
+        <StaticImage
+          src={"../images/kalkspace_interior1.jpg"}
           alt="Innenansicht des KalkSpace: Blick auf die Küche, mit einem großen Esstisch."
+          placeholder="none"
         />
       }
     >
@@ -52,9 +42,11 @@ const IndexPage = () => {
       <ContentBox
         mode="Right"
         sideImage={
-          <img
-            src={blogImg}
+          <StaticImage
+            src={"../images/rc3-robots.jpg"}
             alt="Selbstgebastelte Roboter auf einem Teppich in neonfarbener Beleuchtung"
+            placeholder="none"
+            transformOptions={{ fit: "contain" }}
           />
         }
       >
@@ -70,10 +62,11 @@ const IndexPage = () => {
       <ContentBox
         mode="Center"
         sideImage={
-          <img
+          <StaticImage
             className={styles.robotImage}
-            src={roboImg}
+            src={"../images/robot.png"}
             alt="Roboter Grafik"
+            placeholder="none"
           />
         }
       >
@@ -88,9 +81,10 @@ const IndexPage = () => {
       <ContentBox
         mode="Left"
         sideImage={
-          <img
-            src={space1}
+          <StaticImage
+            src={"../images/kalkspace_sternenposter.jpg"}
             alt="Schreibtisch im KalkSpace, darüber Weltraum-Poster"
+            placeholder="none"
           />
         }
       >
@@ -143,21 +137,28 @@ const IndexPage = () => {
       </ContentBox>
       <ContentBox
         mode="Center"
-        sideImage={<img src={blumeImg} alt="Blumen Grafik" />}
+        sideImage={
+          <StaticImage
+            src={"../images/blume.png"}
+            alt="Blumen Grafik"
+            placeholder="none"
+          />
+        }
       >
         <h2>Partner*innen</h2>
-        <img
-          src={railsloveLogo}
+        <StaticImage
+          src={"../images/railslove_logo.png"}
           alt="Railslove Logo"
           className={styles.partnerLogo}
+          placeholder="none"
         />
         <p>
           Unsere Freund*innen von <a href="https://railslove.com">Railslove</a>{" "}
           haben schon früh an unsere Ideen geglaubt und unterstützen uns seitdem
           auf ganzer Linie. Danke!
         </p>
-        <img
-          src={stormforgerLogo}
+        <StaticImage
+          src={"../images/stormforger_logo.png"}
           alt="Stormforger Logo"
           className={styles.partnerLogo}
         />
@@ -174,8 +175,8 @@ const IndexPage = () => {
         </p>
         <div className={styles.team}>
           <div className={styles.teamMember}>
-            <img
-              src={penny}
+            <StaticImage
+              src={"../images/penny.jpg"}
               alt="Avatar-Bild von Patricia Ennebach"
               title="Patricia Ennenbach"
               className={styles.teamAvatar}
@@ -189,8 +190,8 @@ const IndexPage = () => {
             </p>
           </div>
           <div className={styles.teamMember}>
-            <img
-              src={mop}
+            <StaticImage
+              src={"../images/mop.jpg"}
               alt="Avatar-Bild von Andreas Streichardt"
               title="Andreas Streichardt"
               className={styles.teamAvatar}
@@ -203,8 +204,8 @@ const IndexPage = () => {
             </p>
           </div>
           <div className={styles.teamMember}>
-            <img
-              src={christine}
+            <StaticImage
+              src={"../images/christine.png"}
               alt="Avatar-Bild von Christine Gotthardt"
               title="Christine Gotthardt"
               className={styles.teamAvatar}
@@ -217,8 +218,8 @@ const IndexPage = () => {
             </p>
           </div>
           <div className={styles.teamMember}>
-            <img
-              src={marcus}
+            <StaticImage
+              src={"../images/marcus.jpg"}
               alt="Avatar-Bild von Marcus Weiner"
               title="Marcus Weiner"
               className={styles.teamAvatar}
