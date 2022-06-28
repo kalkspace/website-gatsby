@@ -1,13 +1,10 @@
 import * as React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 
 import { Layout } from "../components/layout/layout";
 import { ContentBox } from "../components/content-box/content-box";
 import { Button } from "../components/button/button";
 import { TitleBox } from "../components/title-box/title-box";
-
-import heroImg from "../images/coworking.jpg";
-import coffeeImg from "../images/coffee.png";
-import workImg from "../images/kalkspace_interior2.jpg";
 
 import * as styles from "./coworking.module.css";
 
@@ -15,9 +12,10 @@ const CoworkingPage = () => {
   return (
     <Layout
       heroImg={
-        <img
-          src={heroImg}
+        <StaticImage
+          src={"../images/coworking.jpg"}
           alt="Laptop und Cappuchino mit Schaumherz von oben"
+          placeholder="blurred"
         />
       }
     >
@@ -38,7 +36,13 @@ const CoworkingPage = () => {
       </ContentBox>
       <ContentBox
         mode="Right"
-        sideImage={<img src={workImg} alt="Arbeitsplatz" />}
+        sideImage={
+          <StaticImage
+            src={"../images/kalkspace_interior2.jpg"}
+            alt="Arbeitsplatz"
+            placeholder="none"
+          />
+        }
       >
         <h2>Wir haben 4 Coworking Modelle:</h2>
         <ul>
@@ -64,10 +68,11 @@ const CoworkingPage = () => {
       <ContentBox
         mode="Center"
         sideImage={
-          <img
-            src={coffeeImg}
+          <StaticImage
+            src={"../images/coffee.png"}
             className={styles.coffeeImg}
             alt="Kaffeetasse mit Milchschaum"
+            placeholder="none"
           />
         }
       >

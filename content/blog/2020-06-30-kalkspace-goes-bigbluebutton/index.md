@@ -1,5 +1,5 @@
 ---
-title: KalkSpace goes BigBlue&shy;Button
+title: KalkSpace goes BigBlueButton
 slug: kalkspace-goes-bigbluebutton
 date: 2020-06-30T00:00:00.000Z
 ---
@@ -8,7 +8,7 @@ date: 2020-06-30T00:00:00.000Z
 
 Wie so viele Menschen haben wir uns in den letzten Wochen in vielen Video- und Telefonkonferenzen rumgetrieben. Auch unsere Vereinsaktivität hat sich ins Internet verlagert. Irgendwie sind wir dann über BigBlueButton gestolpert (danke @ divoc und meeten.statt-drosseln.de!) und dachten: das wollen wir auch!
 
-![](/images/uploads/bildschirmfoto-von-2020-06-10-21-18-06.png)
+![](./bildschirmfoto-von-2020-06-10-21-18-06.png)
 
 BigBlueButton ist open source, ein Link reicht, um es benutzen zu können, es lässt sich datensparsam einrichten, und es HAT EIN WHITEBOARD, AUF DEM ZUSAMMEN RUMGEMALT WERDEN KANN!
 
