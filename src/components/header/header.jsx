@@ -10,6 +10,7 @@ const links = [
   { url: "/community", title: "Community" },
   { url: "/blog", title: "Blog" },
   { url: "/events", title: "Events" },
+  { url: "https://discuss.kalk.space/", title: "Forum" },
 ];
 
 const MenuOpenButton = () => (

@@ -83,7 +83,7 @@ const CoworkingPage = () => {
           Mach gerne einen Termin für einen Probetag aus. Ein Vereinsmitglied
           führt dich herum und kann dir alle Fragen beantworten.
         </p>
-        <Button label="Probetag vereinbaren" url="#" />
+        <Button label="Probetag vereinbaren" url="mailto:hallo@kalk.space" />
       </ContentBox>
       <ContentBox mode="Full">
         <h2>FAQ</h2>
