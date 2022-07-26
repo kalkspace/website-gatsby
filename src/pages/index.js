@@ -76,7 +76,10 @@ const IndexPage = () => {
           relativ stark.
         </p>
         <p>Unsere Regelungen zur Coronapandemie findest du in unserem Forum.</p>
-        <Button label="Mehr" url="#" />
+        <Button
+          label="Mehr"
+          url="https://discuss.kalk.space/t/coronaregelungen/245"
+        />
       </ContentBox>
       <ContentBox
         mode="Left"
@@ -133,7 +136,10 @@ const IndexPage = () => {
             Ausstellungen lokaler Künstler*innen, Hackprojekte.
           </li>
         </ul>
-        <Button label="Häh?" url="https://google.com" />
+        <Button
+          label="Code of Conduct"
+          url="https://discuss.kalk.space/t/code-of-conduct/262"
+        />
       </ContentBox>
       <ContentBox
         mode="Center"
@@ -232,7 +238,7 @@ const IndexPage = () => {
             </p>
           </div>
         </div>
-        <Button label="Lern uns kennen!" url="https://google.com" />
+        <Button label="Schreib uns" url="mailto:hallo@kalk.space" />
       </ContentBox>
     </Layout>
   );
