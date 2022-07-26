@@ -1,5 +1,8 @@
 import * as React from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import { graphql } from "gatsby";
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+
+import { formatDate } from "../utils/date";
 
 import { Layout } from "../components/layout/layout";
 import { TitleAnimator, TitleBox } from "../components/title-box/title-box";
