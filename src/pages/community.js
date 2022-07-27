@@ -21,7 +21,6 @@ const CommunityPage = () => {
     >
       <TitleBox>Community</TitleBox>
       <ContentBox mode="Full">
-        <h1>Community</h1>
         <h2>Raum für Dinge. Und Menschen.</h2>
         <ul>
           <li>
@@ -111,7 +110,10 @@ const CommunityPage = () => {
           <li>Discourse</li>
           <li>Timeline</li>
         </ol>
-        <Button label="Schau bei Github vorbei" url="#" />
+        <Button
+          label="Schau bei Github vorbei"
+          url="https://github.com/kalkspace"
+        />
       </ContentBox>
       <ContentBox mode="Center">
         <h3>Wie ist der Raum?</h3>
