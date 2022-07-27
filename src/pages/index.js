@@ -1,5 +1,8 @@
 import * as React from "react";
-import { StaticImage } from "gatsby-plugin-image";
+import { graphql } from "gatsby";
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
+
+import { formatDate } from "../utils/date";
 
 import { Layout } from "../components/layout/layout";
 import { TitleAnimator, TitleBox } from "../components/title-box/title-box";
@@ -9,7 +12,11 @@ import { Button } from "../components/button/button";
 
 import * as styles from "./index.module.css";
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const newestBlogPost = data.allMdx.edges[0].node;
+  const newestBlogPostImage =
+    newestBlogPost.frontmatter.teaser?.src?.childImageSharp?.gatsbyImageData;
+
   return (
     <Layout
       heroImg={
@@ -42,22 +49,26 @@ const IndexPage = () => {
       <ContentBox
         mode="Right"
         sideImage={
-          <StaticImage
-            src={"../images/rc3-robots.jpg"}
-            alt="Selbstgebastelte Roboter auf einem Teppich in neonfarbener Beleuchtung"
-            placeholder="none"
-            transformOptions={{ fit: "contain" }}
-          />
+          newestBlogPostImage ? (
+            <GatsbyImage
+              className={styles.teaser}
+              image={newestBlogPostImage}
+              alt={newestBlogPost.frontmatter.teaser?.alt ?? ""}
+            />
+          ) : (
+            <StaticImage
+              className={styles.teaser}
+              src={"../images/catstronaut.png"}
+              alt="Katze im Astronautenanzug"
+              placeholder="none"
+            />
+          )
         }
       >
-        <p>01.01.2022</p>
-        <h2>Retro: remote Chaos Gedöns</h2>
-        <p>
-          Wir haben die remote Chaos Experience (rC3) erfolgreich überlebt. Die
-          Bilanz: 12 glückliche Schrott-Roboter-Junghacker*innen (fast) keine
-          Brandblasen, 5 Millionen Lichter...
-        </p>
-        <Button label="Mehr" url="#" />
+        <p>{formatDate(newestBlogPost.frontmatter.date)}</p>
+        <h2>{newestBlogPost.frontmatter.title}</h2>
+        <p>{newestBlogPost.excerpt}</p>
+        <Button label="Mehr" url={newestBlogPost.fields.urlPath} />
       </ContentBox>
       <ContentBox
         mode="Center"
@@ -245,3 +256,30 @@ const IndexPage = () => {
 };
 
 export default IndexPage;
+
+export const query = graphql`
+  query {
+    allMdx(limit: 1, sort: { order: DESC, fields: frontmatter___date }) {
+      edges {
+        node {
+          frontmatter {
+            title
+            date
+            teaser {
+              alt
+              src {
+                childImageSharp {
+                  gatsbyImageData(layout: CONSTRAINED, width: 480)
+                }
+              }
+            }
+          }
+          excerpt
+          fields {
+            urlPath
+          }
+        }
+      }
+    }
+  }
+`;

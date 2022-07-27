@@ -2,6 +2,8 @@ import { graphql, Link } from "gatsby";
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
 
+import { formatDate } from "../utils/date";
+
 import { Layout } from "../components/layout/layout";
 import { ContentBox, MODE } from "../components/content-box/content-box";
 
@@ -26,15 +28,6 @@ import * as styles from "./blog.module.css";
   excerpt: string
  }[]
 }} BlogPostList */
-
-/**
- * @param {string} dateStr
- * @returns {string}
- */
-const formatDate = (dateStr) => {
-  const date = new Date(dateStr);
-  return date.toLocaleDateString();
-};
 
 /** @type {React.FC<import("gatsby").PageProps<{ allMdx: BlogPostList }>>} */
 const BlogPage = ({ data }) => {
