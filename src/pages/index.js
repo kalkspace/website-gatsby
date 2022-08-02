@@ -38,7 +38,7 @@ const IndexPage = ({ data }) => {
           arbeiten, ihre Ideen verwirklichen und sich gegenseitig bereichern
           können.
         </p>
-        <p>Du findest uns hier:</p>
+        <p>Du findest uns hier: Olpener Str. 33, 51103 Köln</p>
         <Map
           position={[50.940569, 7.019904]}
           zoom={16}
