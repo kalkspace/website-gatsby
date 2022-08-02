@@ -4,6 +4,8 @@ import { Layout } from "../components/layout/layout";
 import { ContentBox } from "../components/content-box/content-box";
 import { TitleBox } from "../components/title-box/title-box";
 
+import * as styles from "./events.module.css"
+
 const EventPage = () => {
   const [events, setEvents] = React.useState();
 
@@ -43,7 +45,7 @@ const EventPage = () => {
         <ul>
           {events?.map((event) => {
             return (
-              <li key={event.post.url}>
+              <li key={event.post.url} className={styles.event}>
                 <p>
                   {new Date(event.starts_at).toLocaleString("de", {
                     weekday: "short",
