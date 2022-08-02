@@ -7,7 +7,6 @@ import { Layout } from "../components/layout/layout";
 const ContentPage = ({ children }) => {
   return (
     <Layout>
-      {/*<h1>{props.data.mdx.frontmatter.title}</h1>*/}
       <ContentBox mode={MODE.Full}>{children}</ContentBox>
     </Layout>
   );
