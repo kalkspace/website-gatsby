@@ -6,8 +6,6 @@ import { ContentBox } from "../components/content-box/content-box";
 import { Button } from "../components/button/button";
 import { TitleBox } from "../components/title-box/title-box";
 
-import * as styles from "./community.module.css";
-
 const CommunityPage = () => {
   return (
     <Layout

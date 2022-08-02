@@ -36,10 +36,13 @@ const IconButton = (props) => (
   <button className={style.iconButton} {...props} />
 );
 
-/** @typedef {{ to: string }} LinkProps */
+/** @typedef {{
+  to: string,
+  children: React.ReactNode
+}} LinkProps */
 
 /** @type {React.ComponentType<LinkProps>} */
-const DefaultLink = ({ to, ...props }) => <a href={to} {...props} />;
+const DefaultLink = ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>;
 
 const LinkContext =
   /** @type {React.Context<React.ComponentType<LinkProps>>} */ (
