@@ -21,3 +21,8 @@ export const Layout = ({ children, heroImg }) => {
     </GenerativeStarBackground>
   );
 };
+
+/** @type {React.FC<{}>} */
+export const HardWraps = ({ children }) => (
+  <span className={styles.hardWraps}>{children}</span>
+);
