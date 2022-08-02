@@ -4,6 +4,8 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import logoSkizze from "../../images/logo_skizze_weiss.svg";
 
+import * as style from "./map.module.css";
+
 const logoIcon =
   typeof window === "undefined"
     ? null
@@ -42,7 +44,11 @@ export const Map = ({
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png"
       />
-      <Marker position={position} icon={logoIcon}>
+      <Marker
+        position={position}
+        icon={logoIcon}
+        className={style.markerBackground}
+      >
         {popupText && <Popup>{popupText}</Popup>}
       </Marker>
     </MapContainer>
