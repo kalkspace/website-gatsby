@@ -22,6 +22,9 @@ module.exports = {
             },
           },
         ],
+        defaultLayouts: {
+          default: require.resolve("./src/templates/content-page.js"),
+        },
       },
     },
     {

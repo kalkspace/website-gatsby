@@ -39,3 +39,7 @@
   gap: 3rem;
   margin-bottom: 2rem;
 }
+
+.hard-wraps {
+  white-space: pre;
+}
