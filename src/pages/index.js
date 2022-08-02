@@ -51,13 +51,11 @@ const IndexPage = ({ data }) => {
         sideImage={
           newestBlogPostImage ? (
             <GatsbyImage
-              className={styles.teaser}
               image={newestBlogPostImage}
               alt={newestBlogPost.frontmatter.teaser?.alt ?? ""}
             />
           ) : (
             <StaticImage
-              className={styles.teaser}
               src={"../images/catstronaut.png"}
               alt="Katze im Astronautenanzug"
               placeholder="none"
