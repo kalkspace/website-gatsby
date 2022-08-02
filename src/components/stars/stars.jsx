@@ -35,12 +35,13 @@ export const GenerativeStarBackground = ({ children, ...props }) => {
     return () => window.removeEventListener("resize", updater);
   }, [updater]);
 
+  const typeofWindow = typeof window;
   const radialGradients = useMemo(
     () =>
-      typeof window === "undefined"
+      typeofWindow === "undefined"
         ? ""
         : generateRadialGradient(document.body.clientWidth, bgHeight),
-    [typeof window, bgHeight]
+    [typeofWindow, bgHeight]
   );
 
   return (

@@ -11,7 +11,7 @@ function styleguide() {
       <h6>Überschrift 6</h6>
       <div className="section">
         <p>
-          Wir sind ein <a href="#">Coworking Verein</a> und eine Community
+          Wir sind ein <a href=".">Coworking Verein</a> und eine Community
           kreativer Menschen in Kalk. Zusammen wollen wir einen Ort schaffen, an
           dem Menschen arbeiten, ihre Ideen verwirklichen und sich gegenseitig
           bereichern können. Du findest uns hier:
