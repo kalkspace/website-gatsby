@@ -68,8 +68,8 @@ const Menu = ({ defaultOpen = false }) => {
             <MenuCloseButton />
           </IconButton>
           <ul>
-            {links.map(({ url, title }) => (
-              <li>
+            {links.map(({ url, title }, index) => (
+              <li key={index}>
                 <Link to={url}>{title}</Link>
               </li>
             ))}

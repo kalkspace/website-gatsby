@@ -30,8 +30,8 @@ export const TitleAnimator = ({ titles, animationIntervalMs }) => {
   return (
     <>
       <div className={styles.rotator} style={inlineStyle}>
-        {animatedTitles.map((title) => (
-          <span>{title}</span>
+        {animatedTitles.map((title, index) => (
+          <span key={index}>{title}</span>
         ))}
       </div>
       space
