@@ -45,9 +45,19 @@ export const GenerativeStarBackground = ({ children, ...props }) => {
   );
 
   return (
-    <div {...props} className={styles.wrapper}>
-      <div ref={contentRef}>{children}</div>
-      <div
+    <div
+      {...props}
+      className={styles.wrapper}
+      style={{
+        "--radials": radialGradients,
+        "--stars": background && `url(${background})`,
+        "--bgHeight": `${bgHeight}px`,
+      }}
+    >
+      <div className={styles.content} ref={contentRef}>
+        {children}
+      </div>
+      {/*<div
         style={{ height: bgHeight || undefined }}
         className={styles.cloudWrapper}
       >
@@ -62,7 +72,7 @@ export const GenerativeStarBackground = ({ children, ...props }) => {
           backgroundImage: background && `url(${background})`,
           height: bgHeight || undefined,
         }}
-      />
+      />*/}
     </div>
   );
 };
