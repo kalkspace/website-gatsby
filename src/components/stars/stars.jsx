@@ -48,19 +48,13 @@ export const GenerativeStarBackground = ({ children, ...props }) => {
     <div {...props} className={styles.wrapper}>
       <div ref={contentRef}>{children}</div>
       <div
-        style={{ height: bgHeight || undefined }}
-        className={styles.cloudWrapper}
-      >
-        <div
-          style={{ background: radialGradients }}
-          className={styles.cloud}
-        ></div>
-      </div>
+        style={{ background: radialGradients }}
+        className={styles.cloud}
+      ></div>
       <div
         className={styles.stars}
         style={{
           backgroundImage: background && `url(${background})`,
-          height: bgHeight || undefined,
         }}
       />
     </div>
