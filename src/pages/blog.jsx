@@ -9,6 +9,8 @@ import { ContentBox, MODE } from "../components/content-box/content-box";
 
 import * as styles from "./blog.module.css";
 
+export const Head = () => <title>Blog | KalkSpace</title>;
+
 /** @typedef {{
  nodes: {
   id: string,

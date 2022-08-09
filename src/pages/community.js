@@ -6,6 +6,8 @@ import { ContentBox } from "../components/content-box/content-box";
 import { Button } from "../components/button/button";
 import { TitleBox } from "../components/title-box/title-box";
 
+export const Head = () => <title>Community | KalkSpace</title>;
+
 const CommunityPage = () => {
   return (
     <Layout

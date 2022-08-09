@@ -7,6 +7,8 @@ import { TitleBox } from "../components/title-box/title-box";
 import * as styles from "./events.module.css";
 import { StaticImage } from "gatsby-plugin-image";
 
+export const Head = () => <title>Events | KalkSpace</title>;
+
 const EventPage = () => {
   const [events, setEvents] = React.useState();
 
