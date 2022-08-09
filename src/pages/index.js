@@ -12,6 +12,8 @@ import { Button } from "../components/button/button";
 
 import * as styles from "./index.module.css";
 
+export const Head = () => <title>KalkSpace</title>;
+
 const IndexPage = ({ data }) => {
   const newestBlogPost = data.allMdx.edges[0].node;
   const newestBlogPostImage =

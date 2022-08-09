@@ -5,6 +5,10 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Layout } from "../components/layout/layout";
 import { ContentBox, MODE } from "../components/content-box/content-box";
 
+export const Head = (props) => (
+  <title>{props.data.mdx.frontmatter.title} | KalkSpace</title>
+);
+
 /** @type {React.FC<{ data: any }>} */
 const BlogPost = (props) => {
   return (

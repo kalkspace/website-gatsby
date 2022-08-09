@@ -8,6 +8,8 @@ import { TitleBox } from "../components/title-box/title-box";
 
 import * as styles from "./coworking.module.css";
 
+export const Head = () => <title>Coworking | KalkSpace</title>;
+
 const CoworkingPage = () => {
   return (
     <Layout
