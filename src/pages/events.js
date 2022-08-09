@@ -4,7 +4,8 @@ import { Layout } from "../components/layout/layout";
 import { ContentBox } from "../components/content-box/content-box";
 import { TitleBox } from "../components/title-box/title-box";
 
-import * as styles from "./events.module.css"
+import * as styles from "./events.module.css";
+import { StaticImage } from "gatsby-plugin-image";
 
 const EventPage = () => {
   const [events, setEvents] = React.useState();
@@ -39,7 +40,15 @@ const EventPage = () => {
   }, []);
 
   return (
-    <Layout>
+    <Layout
+      heroImg={
+        <StaticImage
+          src={"../images/rc3-leuchten.jpg"}
+          alt="rc3 Nowhere Pfeile in fluoreszierender Farbe"
+          placeholder="blurred"
+        />
+      }
+    >
       <TitleBox>Events</TitleBox>
       <ContentBox mode="Full">
         <ul>
