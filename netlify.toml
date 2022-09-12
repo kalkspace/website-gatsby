@@ -3,3 +3,9 @@ from = "/kegelbahn"
 to = "https://bbb.kalk.space/b/kal-kpg-ink"
 status = 301
 force = true
+
+[[redirects]]
+from = "/coc"
+to = "https://discuss.kalk.space/t/code-of-conduct/262"
+status = 301
+force = true
