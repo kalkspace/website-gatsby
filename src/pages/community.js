@@ -20,7 +20,7 @@ const CommunityPage = () => {
       }
     >
       <TitleBox>Community</TitleBox>
-      <ContentBox mode="Full">
+      <ContentBox mode="Full" columns>
         <h2>Raum für Dinge. Und Menschen.</h2>
         <ul>
           <li>
@@ -58,6 +58,7 @@ const CommunityPage = () => {
             placeholder="none"
           />
         }
+        columns
       >
         <h2>Programm</h2>
         <p>

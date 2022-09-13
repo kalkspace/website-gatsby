@@ -45,6 +45,7 @@ const CoworkingPage = () => {
             placeholder="none"
           />
         }
+        columns
       >
         <h2>Wir haben 4 Coworking Modelle:</h2>
         <ul>
