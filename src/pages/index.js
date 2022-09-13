@@ -118,7 +118,7 @@ const IndexPage = ({ data }) => {
           sprich uns montags kurz an.
         </p>
       </ContentBox>
-      <ContentBox>
+      <ContentBox columns>
         <h2>Vision</h2>
         <ul>
           <li>

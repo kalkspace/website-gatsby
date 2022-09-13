@@ -136,7 +136,7 @@
   }
 }
 
-.box ul {
+.columns .box ul {
   padding-left: 0;
   column-count: 1;
   list-style: none;
@@ -147,7 +147,7 @@
 }
 
 @media (min-width: 600px) {
-  .mode-full .box ul {
+  .mode-full.columns .box ul {
     column-count: 2;
   }
 }

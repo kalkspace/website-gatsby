@@ -52,7 +52,7 @@ const EventPage = () => {
       }
     >
       <TitleBox>Events</TitleBox>
-      <ContentBox mode="Full">
+      <ContentBox mode="Full" columns>
         <ul>
           {events?.map((event) => {
             return (
