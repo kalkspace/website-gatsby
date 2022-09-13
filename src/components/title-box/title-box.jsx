@@ -3,7 +3,7 @@ import React from "react";
 
 import * as styles from "./title-box.module.css";
 
-/** @type {React.FC<{ pink?: boolean }>} */
+/** @type {React.FC<React.PropsWithChildren<{ pink?: boolean }>>} */
 export const TitleBox = ({ pink = false, children }) => {
   return (
     <div className={styles.titleBoxWrapper}>
@@ -14,7 +14,7 @@ export const TitleBox = ({ pink = false, children }) => {
   );
 };
 
-/** @type {React.FC<{titles: string[], animationIntervalMs?: number }>} */
+/** @type {React.FC<React.PropsWithChildren<{titles: string[], animationIntervalMs?: number }>>} */
 export const TitleAnimator = ({ titles, animationIntervalMs }) => {
   // add the first element twice, so there is no jump in the animation
   const animatedTitles = [...titles, titles[0]].flatMap((t) => [t, t]);
