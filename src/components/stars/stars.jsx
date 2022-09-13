@@ -14,7 +14,7 @@ const tileSize = {
   height: 400,
 };
 
-/** @type {React.FC<{ [k: string]: any }>} */
+/** @type {React.FC<React.PropsWithChildren<{ [k: string]: any }>>} */
 export const GenerativeStarBackground = ({ children, ...props }) => {
   const background = useMemo(() => {
     return generateStars(tileSize.width, tileSize.height);

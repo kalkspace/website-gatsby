@@ -31,7 +31,7 @@ const MenuCloseButton = () => (
   </svg>
 );
 
-/** @type {React.FC<{ [k: string]: any }>} */
+/** @type {React.FC<React.PropsWithChildren<{ [k: string]: any }>>} */
 const IconButton = (props) => (
   <button className={style.iconButton} {...props} />
 );
@@ -39,10 +39,14 @@ const IconButton = (props) => (
 /** @typedef {{
   to: string,
   children: React.ReactNode
-}} LinkProps */
+} & React.HTMLAttributes<HTMLAnchorElement>} LinkProps */
 
 /** @type {React.ComponentType<LinkProps>} */
-const DefaultLink = ({ to, children, ...props }) => <a href={to} {...props}>{children}</a>;
+const DefaultLink = ({ to, children, ...props }) => (
+  <a href={to} {...props}>
+    {children}
+  </a>
+);
 
 const LinkContext =
   /** @type {React.Context<React.ComponentType<LinkProps>>} */ (
