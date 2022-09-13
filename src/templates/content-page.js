@@ -7,7 +7,9 @@ import { Layout } from "../components/layout/layout";
 const ContentPage = ({ children }) => {
   return (
     <Layout>
-      <ContentBox mode={MODE.Full}>{children}</ContentBox>
+      <ContentBox mode={MODE.Full} wordBreaks>
+        {children}
+      </ContentBox>
     </Layout>
   );
 };

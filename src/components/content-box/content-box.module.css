@@ -16,6 +16,11 @@
   background-color: hsla(0, 0%, 0%, 0.5);
 }
 
+.word-breaks {
+  word-break: break-word;
+  hyphens: auto;
+}
+
 .mode-left .box {
   margin-left: -5em;
   padding-left: 5em;
