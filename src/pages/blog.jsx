@@ -31,7 +31,7 @@ export const Head = () => <title>Blog | KalkSpace</title>;
  }[]
 }} BlogPostList */
 
-/** @type {React.FC<import("gatsby").PageProps<{ allMdx: BlogPostList }>>} */
+/** @type {React.FC<React.PropsWithChildren<import("gatsby").PageProps<{ allMdx: BlogPostList }>>>} */
 const BlogPage = ({ data }) => {
   const posts = data.allMdx.nodes.map(
     ({ fields, frontmatter, id, excerpt }) => {

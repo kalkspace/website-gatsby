@@ -9,7 +9,7 @@ export const Head = (props) => (
   <title>{props.data.mdx.frontmatter.title} | KalkSpace</title>
 );
 
-/** @type {React.FC<{ data: any }>} */
+/** @type {React.FC<React.PropsWithChildren<{ data: any }>>} */
 const BlogPost = (props) => {
   return (
     <Layout>

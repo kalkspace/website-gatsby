@@ -1,4 +1,4 @@
-declare module "*.svg"
+declare module "*.svg";
 
 declare module "*.jpg" {
   const value: string;
@@ -9,4 +9,9 @@ declare module "*.png" {
   export default value;
 }
 
-declare module "*.mdx"
+declare module "*.mdx";
+
+declare module "*.module.css" {
+  const value: Record<string, string>;
+  export = value;
+}

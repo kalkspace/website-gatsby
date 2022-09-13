@@ -6,7 +6,7 @@ import { GenerativeStarBackground } from "../stars/stars";
 import { Header } from "../header/header";
 import { Footer } from "../footer/footer";
 
-/** @type {React.FC<{ heroImg?: React.ReactNode }>} */
+/** @type {React.FC<React.PropsWithChildren<{ heroImg?: React.ReactNode }>>} */
 export const Layout = ({ children, heroImg }) => {
   return (
     <GenerativeStarBackground>
@@ -22,7 +22,7 @@ export const Layout = ({ children, heroImg }) => {
   );
 };
 
-/** @type {React.FC<{}>} */
+/** @type {React.FC<React.PropsWithChildren<{}>>} */
 export const HardWraps = ({ children }) => (
   <span className={styles.hardWraps}>{children}</span>
 );
