@@ -40,6 +40,15 @@ export const Footer = () => {
         </li>
         <li>
           <a
+            href="https://chaos.social/@kalkspace"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Mastodon
+          </a>
+        </li>
+        <li>
+          <a
             href="https://join.slack.com/t/kalkspacecommunity/shared_invite/enQtNzg3NDg2MTMyMDgwLWRmODI3OGQzODM4NGQ5M2I3YjhmZDI5ODE0ZmE5YjkwOTVlNTE1Y2MzYTM0NDk4NGM5YzZmMzU1NDBiY2JmNWM"
             target="_blank"
             rel="noreferrer"
