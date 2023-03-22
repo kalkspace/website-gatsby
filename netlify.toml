@@ -9,3 +9,9 @@ from = "/coc"
 to = "https://discuss.kalk.space/t/code-of-conduct/262"
 status = 301
 force = true
+
+[[redirects]]
+from = "/events.ics"
+to = "https://ical.k3s.kalk.space/"
+status = 200
+force = true
