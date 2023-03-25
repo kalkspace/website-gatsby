@@ -15,3 +15,9 @@ from = "/events.ics"
 to = "https://ical.k3s.kalk.space/"
 status = 200
 force = true
+
+[[redirects]]
+from = "/cryptoparty-handout"
+to = "https://md.chaosdorf.de/s/GclNE4YZL#"
+status = 301
+force = true
