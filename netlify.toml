@@ -19,5 +19,5 @@ force = true
 [[redirects]]
 from = "/cryptoparty-handout"
 to = "https://md.chaosdorf.de/JmDWn-BxSC6co6P1UZbG8g?view="
-status = 200
+status = 301
 force = true
