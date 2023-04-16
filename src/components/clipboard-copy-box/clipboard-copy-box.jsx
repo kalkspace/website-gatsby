@@ -20,7 +20,6 @@ export const ClipboardCopyBox = ({ text }) => {
           event.target.select();
         }}
         className={styles.text}
-        style={{ width: `${text.length}ch` }}
       />
 
       <button

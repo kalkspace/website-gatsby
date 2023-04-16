@@ -3,13 +3,6 @@
   flex-direction: column;
 }
 
-@media (min-width: 600px) {
-  .container {
-    flex-direction: row;
-    align-items: stretch;
-  }
-}
-
 .text {
   padding: 0.4em;
   color: white;
@@ -21,9 +14,21 @@
   padding: 0.4em;
   background: white;
   border: 2px solid white;
+  white-space: nowrap;
   text-transform: uppercase;
 }
 
 .result-message {
   padding: 0.4em;
+}
+
+@media (min-width: 600px) {
+  .container {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .text {
+    width: 28ch;
+  }
 }
