@@ -6,6 +6,9 @@ import { TitleBox } from "../components/title-box/title-box";
 
 import * as styles from "./events.module.css";
 import { StaticImage } from "gatsby-plugin-image";
+import { ClipboardCopyBox } from "../components/clipboard-copy-box/clipboard-copy-box";
+
+const icsUrl = "https://kalk.space/events.ics";
 
 export const Head = () => <title>Events | KalkSpace</title>;
 
@@ -74,6 +77,13 @@ const EventPage = () => {
             );
           })}
         </ul>
+      </ContentBox>
+      <ContentBox>
+        <p>
+          Du kannst diese Events auch in deinem persönlichen Kalender anzeigen
+          lassen. Kopiere dafür die folgende URL und richte ein Abonnement ein.
+        </p>
+        <ClipboardCopyBox text={icsUrl} />
       </ContentBox>
     </Layout>
   );
