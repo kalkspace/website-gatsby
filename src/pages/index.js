@@ -248,6 +248,21 @@ const IndexPage = ({ data }) => {
               Arbeiten fördern die Lebensqualität.
             </p>
           </div>
+          <div className={styles.teamMember}>
+            <StaticImage
+              src={"../images/joerg.jpg"}
+              alt="Avatar-Bild von Jörg Stroich"
+              title="Jörg Stroich"
+              className={styles.teamAvatar}
+            />
+            <p className={styles.teamName}>Jörg</p>
+            <p>
+              Freier Journalist, agiler Coach und Schreibgeräte-Enthusiast.
+              Interessiert sich für Innovation und Design Thinking und schreibt
+              darüber und auch über Versicherungs-, Vorsorge- und
+              Immobilienthemen.
+            </p>
+          </div>
         </div>
         <Button label="Schreib uns" url="mailto:hallo@kalk.space" />
       </ContentBox>
