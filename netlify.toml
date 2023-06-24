@@ -21,3 +21,9 @@ from = "/cryptoparty-handout"
 to = "https://md.chaosdorf.de/s/GclNE4YZL#"
 status = 301
 force = true
+
+[[redirects]]
+from = "/.well-known/matrix/*"
+to = "https://matrix.kalk.space/.well-known/matrix/:splat"
+status = 200
+force = true
