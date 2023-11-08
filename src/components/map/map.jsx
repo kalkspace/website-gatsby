@@ -1,19 +1,20 @@
-import React from "react";
-import { icon } from "leaflet";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import logoSkizze from "../../images/logo_skizze_weiss.svg";
+import React, { useEffect, useRef } from "react";
+import * as maplibre from "maplibre-gl";
+import "maplibre-gl/dist/maplibre-gl.css";
+import { Graybeard } from "@versatiles/style";
 
-import "./map.module.css";
+import * as styles from "./map.module.css";
+import logo from "../../images/logo_skizze_weiss.svg";
 
-const logoIcon =
-  typeof window === "undefined"
-    ? null
-    : icon({
-        iconUrl: logoSkizze,
-        iconSize: [38, 38],
-        popupAnchor: [0, -19],
-      });
+const logoElement = document.createElement("img");
+logoElement.src = logo;
+logoElement.className = styles.logo;
+
+const graybeard = new Graybeard();
+graybeard.baseUrl = "https://tiles.versatiles.org/";
+const style = /** @type {import("maplibre-gl").StyleSpecification} */ (
+  graybeard.build()
+);
 
 /** @type {React.FC<{
   position: [number, number],
@@ -23,30 +24,46 @@ const logoIcon =
   popupText?: string,
 }>} */
 export const Map = ({
-  position,
+  position: [lat, lng],
   zoom,
   mapClassName,
   scrollWheelZoom,
   popupText,
 }) => {
+  /** @type {React.MutableRefObject<HTMLDivElement | null>} */
+  const mapContainer = useRef(null);
+
+  useEffect(() => {
+    if (!mapContainer.current) return;
+
+    const map = new maplibre.Map({
+      container: mapContainer.current,
+      style,
+      center: [lng, lat],
+      zoom,
+      scrollZoom: scrollWheelZoom,
+    });
+    map.addControl(new maplibre.NavigationControl(), "top-right");
+
+    const marker = new maplibre.Marker({ element: logoElement }).setLngLat([
+      lng,
+      lat,
+    ]);
+    if (popupText) {
+      marker.setPopup(
+        new maplibre.Popup({ className: styles.popup }).setText(popupText)
+      );
+    }
+    marker.addTo(map);
+
+    return () => {
+      map.remove();
+    };
+  }, [lng, lat, zoom, scrollWheelZoom]);
+
   if (typeof window === undefined) {
     return <></>;
   }
 
-  return (
-    <MapContainer
-      center={position}
-      zoom={zoom}
-      scrollWheelZoom={scrollWheelZoom}
-      className={mapClassName}
-    >
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png"
-      />
-      <Marker position={position} icon={logoIcon}>
-        {popupText && <Popup>{popupText}</Popup>}
-      </Marker>
-    </MapContainer>
-  );
+  return <div ref={mapContainer} className={mapClassName} />;
 };

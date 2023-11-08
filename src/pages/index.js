@@ -42,7 +42,7 @@ const IndexPage = ({ data }) => {
         </p>
         <p>Du findest uns hier: Olpener Str. 33, 51103 Köln</p>
         <Map
-          position={[50.940569, 7.019904]}
+          position={[50.940629, 7.019904]}
           zoom={16}
           mapClassName={styles.mapContainer}
           popupText="Innenhof, dann nach rechts. Dritte Tür."
