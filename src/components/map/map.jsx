@@ -11,7 +11,10 @@ logoElement.src = logo;
 logoElement.className = styles.logo;
 
 const graybeard = new Graybeard();
-graybeard.baseUrl = "https://tiles.versatiles.org/";
+graybeard.glyphsUrl = new URL(
+  "/assets/fonts/{fontstack}/{range}.pbf",
+  window.location.origin
+).toString();
 graybeard.tilesUrls = [
   new URL("/api/tiles/{z}/{x}/{y}", window.location.origin).toString(),
 ];
