@@ -27,14 +27,6 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
-      options: {
-        google: {
-          families: ["Space Grotesk:400,700"],
-        },
-      },
-    },
-    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "blog",
