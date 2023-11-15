@@ -6,21 +6,7 @@ import { Graybeard } from "@versatiles/style";
 import * as styles from "./map.module.css";
 import logo from "../../images/logo_skizze_weiss.svg";
 
-const logoElement = document.createElement("img");
-logoElement.src = logo;
-logoElement.className = styles.logo;
-
 const graybeard = new Graybeard();
-graybeard.glyphsUrl = new URL(
-  "/assets/fonts/{fontstack}/{range}.pbf",
-  window.location.origin
-).toString();
-graybeard.tilesUrls = [
-  new URL("/api/tiles/{z}/{x}/{y}", window.location.origin).toString(),
-];
-const style = /** @type {import("maplibre-gl").StyleSpecification} */ (
-  graybeard.build()
-);
 
 /** @type {React.FC<{
   position: [number, number],
@@ -40,8 +26,19 @@ export const Map = ({
   const mapContainer = useRef(null);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     if (!mapContainer.current) return;
 
+    graybeard.glyphsUrl = new URL(
+      "/assets/fonts/{fontstack}/{range}.pbf",
+      window.location.origin
+    ).toString();
+    graybeard.tilesUrls = [
+      new URL("/api/tiles/{z}/{x}/{y}", window.location.origin).toString(),
+    ];
+    const style = /** @type {import("maplibre-gl").StyleSpecification} */ (
+      graybeard.build()
+    );
     const map = new maplibre.Map({
       container: mapContainer.current,
       style,
@@ -51,6 +48,9 @@ export const Map = ({
     });
     map.addControl(new maplibre.NavigationControl(), "top-right");
 
+    const logoElement = document.createElement("img");
+    logoElement.src = logo;
+    logoElement.className = styles.logo;
     const marker = new maplibre.Marker({ element: logoElement }).setLngLat([
       lng,
       lat,
@@ -64,6 +64,7 @@ export const Map = ({
 
     return () => {
       map.remove();
+      logoElement.remove();
     };
   }, [lng, lat, zoom, scrollWheelZoom]);
 
