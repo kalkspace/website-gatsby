@@ -12,6 +12,9 @@ logoElement.className = styles.logo;
 
 const graybeard = new Graybeard();
 graybeard.baseUrl = "https://tiles.versatiles.org/";
+graybeard.tilesUrls = [
+  new URL("/api/tiles/{z}/{x}/{y}", window.location.origin).toString(),
+];
 const style = /** @type {import("maplibre-gl").StyleSpecification} */ (
   graybeard.build()
 );

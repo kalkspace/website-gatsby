@@ -1,3 +1,6 @@
+[build]
+functions = "src/functions"
+
 [[redirects]]
 from = "/kegelbahn"
 to = "https://bbb.kalk.space/rooms/gdf-1yc-88b-yxb/join"
