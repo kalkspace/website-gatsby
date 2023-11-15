@@ -29,6 +29,10 @@ export const Map = ({
     if (typeof window === "undefined") return;
     if (!mapContainer.current) return;
 
+    graybeard.spriteUrl = new URL(
+      "/assets/sprites/sprites",
+      window.location.origin
+    ).toString();
     graybeard.glyphsUrl = new URL(
       "/assets/fonts/{fontstack}/{range}.pbf",
       window.location.origin
