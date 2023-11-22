@@ -19,8 +19,10 @@ export default async (req: Request, context: Context) => {
 
   const headers: Record<string, string> = {
     "Netlify-CDN-Cache-Control": "public, max-age=2592000, immutable",
+    "Content-Type": "application/x-protobuf",
   };
   if (tile.compression) {
+    console.log("tile compression:", tile.compression);
     headers["Content-Encoding"] = tile.compression;
   }
   return new Response(tile.buffer, { headers });
