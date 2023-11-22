@@ -59,7 +59,7 @@
   },
   "browserslist": {
     "production": [
-      "defaults",
+      "defaults and supports es6-class",
       "not ie 11"
     ]
   }
