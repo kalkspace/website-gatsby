@@ -1,5 +1,7 @@
 import { Config, Context } from "@netlify/functions";
 import { Layer } from "@versatiles/server/dist/lib/layer.js";
+import zlib from "node:zlib";
+import { promisify } from "node:util";
 
 let getTile: Awaited<ReturnType<Layer["getTileFunction"]>> | undefined;
 
@@ -21,11 +23,12 @@ export default async (req: Request, context: Context) => {
     "Netlify-CDN-Cache-Control": "public, max-age=2592000, immutable",
     "Content-Type": "application/x-protobuf",
   };
-  if (tile.compression) {
-    console.log("tile compression:", tile.compression);
-    headers["Content-Encoding"] = tile.compression;
+  if (tile.compression !== "gzip") {
+    console.log("unexpected tile compression:", tile.compression);
+    return new Response("", { status: 500 });
   }
-  return new Response(tile.buffer, { headers });
+  const uncompressed = await promisify(zlib.gunzip)(tile.buffer);
+  return new Response(uncompressed, { headers });
 };
 
 export const config: Config = { path: "/api/tiles/:z/:x/:y" };
