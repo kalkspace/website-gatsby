@@ -1,13 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
-import workerScript from "maplibre-gl/dist/maplibre-gl-csp-worker.js?asset";
 import { Graybeard } from "@versatiles/style";
 
 import * as styles from "./map.module.css";
 import logo from "../../images/logo_skizze_weiss.svg";
 
-maplibregl.workerUrl = workerScript;
 const graybeard = new Graybeard();
 
 /** @type {React.FC<{
