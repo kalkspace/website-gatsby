@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from "react";
-import * as maplibre from "maplibre-gl";
+import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
+import workerScript from "maplibre-gl/dist/maplibre-gl-csp-worker.js?asset";
 import { Graybeard } from "@versatiles/style";
 
 import * as styles from "./map.module.css";
 import logo from "../../images/logo_skizze_weiss.svg";
 
+maplibregl.workerUrl = workerScript;
 const graybeard = new Graybeard();
 
 /** @type {React.FC<{
@@ -43,25 +45,25 @@ export const Map = ({
     const style = /** @type {import("maplibre-gl").StyleSpecification} */ (
       graybeard.build()
     );
-    const map = new maplibre.Map({
+    const map = new maplibregl.Map({
       container: mapContainer.current,
       style,
       center: [lng, lat],
       zoom,
       scrollZoom: scrollWheelZoom,
     });
-    map.addControl(new maplibre.NavigationControl(), "top-right");
+    map.addControl(new maplibregl.NavigationControl(), "top-right");
 
     const logoElement = document.createElement("img");
     logoElement.src = logo;
     logoElement.className = styles.logo;
-    const marker = new maplibre.Marker({ element: logoElement }).setLngLat([
+    const marker = new maplibregl.Marker({ element: logoElement }).setLngLat([
       lng,
       lat,
     ]);
     if (popupText) {
       marker.setPopup(
-        new maplibre.Popup({ className: styles.popup }).setText(popupText)
+        new maplibregl.Popup({ className: styles.popup }).setText(popupText)
       );
     }
     marker.addTo(map);
