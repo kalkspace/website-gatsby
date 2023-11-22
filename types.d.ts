@@ -15,3 +15,8 @@ declare module "*.module.css" {
   const value: Record<string, string>;
   export = value;
 }
+
+declare module "*?asset" {
+  const value: string;
+  export default value;
+}

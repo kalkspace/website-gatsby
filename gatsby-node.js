@@ -77,15 +77,27 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 /** @type {import("gatsby").GatsbyNode["onCreateWebpackConfig"]} */
 exports.onCreateWebpackConfig = ({ getConfig, stage, loaders, actions }) => {
-  if (stage === "build-html" || stage === "develop-html") {
-    const config = getConfig();
-    actions.setWebpackConfig({
-      externals: [
+  const config = getConfig();
+  const newConfig = {
+    ...config,
+    module: {
+      ...config.module,
+      rules: [
         {
-          canvas: "commonjs canvas",
+          resourceQuery: "?asset",
+          type: "asset/resource",
         },
-        ...config.externals,
+        ...config.module.rules,
       ],
-    });
+    },
+  };
+  if (stage === "build-html" || stage === "develop-html") {
+    newConfig.externals = [
+      {
+        canvas: "commonjs canvas",
+      },
+      ...config.externals,
+    ];
   }
+  actions.replaceWebpackConfig(newConfig);
 };

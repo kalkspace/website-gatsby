@@ -20,27 +20,28 @@
     "@fontsource/space-grotesk": "^5.0.15",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "canvas": "^2.9.1",
+    "@versatiles/server": "^1.1.3",
+    "@versatiles/style": "^3.4.1",
+    "canvas": "^2.11.2",
     "clsx": "^1.1.1",
     "gatsby": "^4.5.4",
     "gatsby-plugin-image": "^2.17.0",
     "gatsby-plugin-mdx": "^3.6.0",
-    "gatsby-plugin-react-leaflet": "^3.0.3",
     "gatsby-plugin-sass": "^5.6.0",
     "gatsby-plugin-sharp": "^4.17.0",
     "gatsby-remark-images": "^6.17.0",
     "gatsby-source-filesystem": "^4.17.0",
     "gatsby-transformer-sharp": "^4.17.0",
-    "leaflet": "^1.7.1",
+    "maplibre-gl": "^3.5.2",
     "modern-normalize": "^1.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-leaflet": "^3.2.5",
     "sass": "^1.49.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
+    "@netlify/functions": "^2.4.0",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-interactions": "^6.4.19",
@@ -49,9 +50,17 @@
     "@storybook/manager-webpack5": "^6.4.19",
     "@storybook/react": "^6.4.19",
     "@storybook/testing-library": "^0.0.9",
-    "@types/leaflet": "^1.7.9",
     "babel-loader": "^8.2.3",
     "typescript": "^4.6.2",
     "typescript-plugin-css-modules": "^3.4.0"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "browserslist": {
+    "production": [
+      "defaults and supports es6-class",
+      "not ie 11"
+    ]
   }
 }

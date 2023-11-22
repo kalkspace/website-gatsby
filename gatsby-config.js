@@ -34,11 +34,5 @@ module.exports = {
       },
       __key: "blog",
     },
-    {
-      resolve: "gatsby-plugin-react-leaflet",
-      options: {
-        linkStyles: false,
-      },
-    },
   ],
 };
