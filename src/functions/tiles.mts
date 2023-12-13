@@ -31,4 +31,4 @@ export default async (req: Request, context: Context) => {
   return new Response(uncompressed, { headers });
 };
 
-export const config: Config = { path: "/api/tiles/:z/:x/:y" };
+export const config: Config = { path: "/tiles/:z/:x/:y" };
