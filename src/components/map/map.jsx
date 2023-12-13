@@ -38,7 +38,7 @@ export const Map = ({
       window.location.origin
     ).toString();
     graybeard.tilesUrls = [
-      new URL("/api/tiles/{z}/{x}/{y}", window.location.origin).toString(),
+      new URL("/tiles/{z}/{x}/{y}", window.location.origin).toString(),
     ];
     const style = /** @type {import("maplibre-gl").StyleSpecification} */ (
       graybeard.build()
