@@ -35,10 +35,16 @@ const IndexPage = ({ data }) => {
       <ContentBox boxClassName={styles.mapBox}>
         <h2>Hallo Welt</h2>
         <p>
-          Wir sind ein Coworking Verein und eine Community kreativer Menschen in
-          Kalk. Zusammen wollen wir einen Ort schaffen, an dem Menschen
-          arbeiten, ihre Ideen verwirklichen und sich gegenseitig bereichern
-          können.
+          Der Kalkspace ist ein Ort, an dem wir uns treffen zum Austausch,
+          miteinander arbeiten, Projekte verwirklichen, voneinander lernen. Wir
+          bieten Raum für: Softwarefrickeln, Spieleabende, Schreibworkshops,
+          Vorträge, gemeinsames Kochen, Lerngruppen und vieles mehr. Digitale
+          Bildung bedeutet für uns Technik im Kontext von Gesellschaft zu
+          betrachten und Machtverhältnisse zu hinterfragen.
+        </p>
+        <p>
+          Als Verein sind wir gemeinschaftlich organisiert. Wir freuen uns über
+          Menschen, die Interesse haben mitzugestalten.
         </p>
         <p>Du findest uns hier: Olpener Str. 33, 51103 Köln</p>
         <Map
