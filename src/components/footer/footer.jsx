@@ -31,15 +31,6 @@ export const Footer = () => {
         </li>
         <li>
           <a
-            href="https://twitter.com/kalkspace"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Twitter
-          </a>
-        </li>
-        <li>
-          <a
             href="https://chaos.social/@kalkspace"
             target="_blank"
             rel="noreferrer"
