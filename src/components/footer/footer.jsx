@@ -33,7 +33,7 @@ export const Footer = () => {
           <a
             href="https://chaos.social/@kalkspace"
             target="_blank"
-            rel="noreferrer"
+            rel="noreferrer me"
           >
             Mastodon
           </a>
