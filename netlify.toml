@@ -2,6 +2,12 @@
 functions = "src/functions"
 
 [[redirects]]
+from = "https://kalkspace.de/*"
+to = "https://kalk.space/:splat"
+status = 301
+force = true
+
+[[redirects]]
 from = "/kegelbahn"
 to = "https://bbb.kalk.space/rooms/gdf-1yc-88b-yxb/join"
 status = 301
