@@ -228,20 +228,6 @@ const IndexPage = ({ data }) => {
           </div>
           <div className={styles.teamMember}>
             <StaticImage
-              src={"../images/christine.png"}
-              alt="Avatar-Bild von Christine Gotthardt"
-              title="Christine Gotthardt"
-              className={styles.teamAvatar}
-            />
-            <p className={styles.teamName}>Christine</p>
-            <p>
-              Softwareentwicklerin. Zweite Heimat zwischen Indien und Sizilien.
-              Begeistert von agilen Arbeitsprozessen, netten Kolleg*innen,
-              Frontend, lernt die Begeisterung fürs Backend und Geduld.
-            </p>
-          </div>
-          <div className={styles.teamMember}>
-            <StaticImage
               src={"../images/marcus.jpg"}
               alt="Avatar-Bild von Marcus Weiner"
               title="Marcus Weiner"
