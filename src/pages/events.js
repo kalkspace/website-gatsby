@@ -59,29 +59,27 @@ const EventPage = () => {
       }
     >
       <TitleBox>Events</TitleBox>
-      <ContentBox mode="Full" columns>
-        <ul>
-          {events?.map((event) => {
-            return (
-              <li key={event.post.url} className={styles.event}>
-                <p>
-                  {new Date(event.starts_at).toLocaleString("de", {
-                    weekday: "short",
-                    day: "2-digit",
-                    month: "2-digit",
-                    year: "numeric",
-                    hour: "2-digit",
-                    minute: "2-digit",
-                  })}
-                </p>
-                <a href={"https://discuss.kalk.space/" + event.post.url}>
-                  {event.post.topic.title}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </ContentBox>
+      <div className={styles.masonry}>
+        {events?.map((event, i) => {
+          return (
+            <ContentBox mode={i % 2 == 0 ? "Left" : "Right"} masonry>
+              <p>
+                {new Date(event.starts_at).toLocaleString("de", {
+                  weekday: "short",
+                  day: "2-digit",
+                  month: "2-digit",
+                  year: "numeric",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+              </p>
+              <a href={"https://discuss.kalk.space/" + event.post.url}>
+                {event.post.topic.title}
+              </a>
+            </ContentBox>
+          );
+        })}
+      </div>
       <ContentBox>
         <p>
           Du kannst diese Events auch in deinem persönlichen Kalender anzeigen

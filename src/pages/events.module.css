@@ -1,3 +1,17 @@
 .event {
-    break-inside: avoid;
+  break-inside: avoid;
+}
+
+.masonry {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @media (min-width: 600px) {
+    gap: 0;
+
+    > *:not(:last-child) {
+      margin-bottom: -1.5rem;
+    }
+  }
 }
