@@ -73,7 +73,10 @@ const EventPage = () => {
                   minute: "2-digit",
                 })}
               </p>
-              <a href={"https://discuss.kalk.space/" + event.post.url}>
+              <a
+                className={styles.title}
+                href={"https://discuss.kalk.space/" + event.post.url}
+              >
                 {event.post.topic.title}
               </a>
             </ContentBox>

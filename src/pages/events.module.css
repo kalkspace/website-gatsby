@@ -2,6 +2,11 @@
   break-inside: avoid;
 }
 
+.title {
+  font-size: 1.4rem;
+  line-height: 1.5;
+}
+
 .masonry {
   display: flex;
   flex-direction: column;
