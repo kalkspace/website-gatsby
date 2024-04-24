@@ -12,15 +12,19 @@ const icsUrl = "https://kalk.space/events.ics";
 
 export const Head = () => <title>Events | KalkSpace</title>;
 
+/** @typedef {{ starts_at: number, post: { url: string, topic: { title: string } } }} Event */
+
 const EventPage = () => {
-  const [events, setEvents] = React.useState();
+  const [events, setEvents] = React.useState(
+    /** @type {Event[] | null} */ (null)
+  );
 
   React.useEffect(() => {
     fetch("https://discuss.kalk.space/discourse-post-event/events.json")
       .then(function (eventsResponse) {
         return eventsResponse.json();
       })
-      .then(function (result) {
+      .then(function (/** @type {{ events: Event[] }} */ result) {
         const futureEvents = result.events.filter(function (event) {
           // use yesterday's date for comparison so we don't filter out currently running events
           const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000);
