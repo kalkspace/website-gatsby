@@ -4,6 +4,7 @@
   align-items: flex-start;
   position: relative;
   --box-padding: 1.5em;
+  --masonry: 0px;
 }
 
 .box {
@@ -91,6 +92,10 @@
     flex-direction: row;
   }
 
+  .wrapper.masonry {
+    --masonry: 1.5rem;
+  }
+
   .wrapper.mode-right {
     flex-direction: row-reverse;
   }
@@ -106,11 +111,11 @@
   .mode-left .box,
   .mode-center .box,
   .mode-right .box {
-    width: 50%;
+    width: calc(50% - var(--masonry));
   }
 
   .wrapper .box {
-    min-width: 50%;
+    min-width: calc(50% - var(--masonry));
     padding: var(--box-padding) calc(1.5 * var(--box-padding));
   }
 

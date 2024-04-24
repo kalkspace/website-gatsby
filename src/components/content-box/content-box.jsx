@@ -14,7 +14,7 @@ export const MODE = Object.freeze({
 /** @type {(mode: MODE[keyof MODE]) => string} */
 const modeStyle = (mode) => styles[`mode${mode}`];
 
-/** @type {React.FC<{ mode?: MODE[keyof MODE], sideImage?: React.ReactNode, boxClassName?: string, innerClassName?: string, wordBreaks?: boolean, columns?: boolean }>} */
+/** @type {React.FC<import("react").PropsWithChildren<{ mode?: MODE[keyof MODE], sideImage?: React.ReactNode, boxClassName?: string, innerClassName?: string, wordBreaks?: boolean, columns?: boolean, masonry?: boolean }>>} */
 export const ContentBox = ({
   children,
   mode = MODE.full,
@@ -23,6 +23,7 @@ export const ContentBox = ({
   innerClassName,
   wordBreaks,
   columns,
+  masonry,
 }) => {
   return (
     <div
@@ -31,7 +32,8 @@ export const ContentBox = ({
         modeStyle(mode),
         boxClassName,
         wordBreaks && styles.wordBreaks,
-        columns && styles.columns
+        columns && styles.columns,
+        masonry && styles.masonry
       )}
     >
       <div className={clsx(styles.box, innerClassName)}>{children}</div>
