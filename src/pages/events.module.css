@@ -1,10 +1,33 @@
 .event {
   break-inside: avoid;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  p {
+    margin-bottom: 0;
+  }
 }
 
 .title {
   font-size: 1.4rem;
   line-height: 1.5;
+}
+
+.category {
+  border-left: 0.5rem solid;
+  padding: 0 1rem;
+  align-self: flex-start;
+}
+
+.date {
+  font-size: 1.2rem;
+  line-height: 1.4;
+
+  > time:not(:first-child):before {
+    content: " | ";
+  }
 }
 
 .masonry {
