@@ -65,6 +65,7 @@ const CommunityPage = () => {
         <p>
           Im KalkSpace finden wechselnd verschiedene Veranstaltungen statt. Du findest die nächsten Termine im <Link to="/events">Kalender</Link>.
         </p>
+      </ContentBox>
       <ContentBox
         mode="Left"
         sideImage={
