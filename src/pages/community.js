@@ -1,5 +1,6 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 
 import { Layout } from "../components/layout/layout";
 import { ContentBox } from "../components/content-box/content-box";
@@ -62,32 +63,8 @@ const CommunityPage = () => {
       >
         <h2>Programm</h2>
         <p>
-          Ein kleiner Einblick in die Events, die (un)regelmäßig im Space
-          stattfinden:
+          Im KalkSpace finden wechselnd verschiedene Veranstaltungen statt. Du findest die nächsten Termine im <Link to="/events">Kalender</Link>.
         </p>
-        <ul>
-          <li>
-            <h3>Plenum:</h3> jeden Montag ab 20.00 (z.Z. online).
-            Arbeitstreffen, um Dinge zu organisieren und Projekte zu
-            koordinieren. Öffentlich, jede*r kann dazukommen, mitreden und die
-            Community kennenlernen.
-          </li>
-          <li>
-            <h3>Frickelsamstag:</h3> Jeden 3. Samstag im Monat wird je nach Lage
-            online oder offline im Space zusammen gefrickelt, Software und
-            Hardware repariert und kaputt gemacht. Termin im Forum.
-          </li>
-          <li>
-            <h3>f.u.c.k.:</h3> Kurz für FrauenNichtbinärTransInter Und Computer
-            Kram. Feministisches Tech-Kollektiv mit Schwerpunkt Skillsharing,
-            Verschlüsselung, digitale Selbstverteidigung.
-          </li>
-          <li>
-            <h3>WebDev Learning Group:</h3> Jeden Dienstag ab 8 online,
-            Einsteiger*innen-freundlich, gerne eigene Probleme mitbringen.
-          </li>
-        </ul>
-      </ContentBox>
       <ContentBox
         mode="Left"
         sideImage={
