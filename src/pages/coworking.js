@@ -1,5 +1,6 @@
 import * as React from "react";
 import { StaticImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 
 import { Layout } from "../components/layout/layout";
 import { ContentBox } from "../components/content-box/content-box";
@@ -80,13 +81,12 @@ const CoworkingPage = () => {
         }
       >
         <p>
-          Du magst dir den Space anschauen und die Coworkenden kennenlernen?
+          Du magst dir den Space anschauen und uns kennenlernen?
         </p>
         <p>
-          Mach gerne einen Termin für einen Probetag aus. Ein Vereinsmitglied
-          führt dich herum und kann dir alle Fragen beantworten.
+	  Komm gerne zu unserem wöchentlichen Mittagsplenum und lerne uns kennen. Die kommenden Termine findest du bei unseren <Link to="/events">Events</Link>. Dort besprechen wir was im Space gerade ansteht, kochen oft zusammen und tauschen uns aus. Du kannst dir einen Eindruck vom Space und den Menschen hier verschaffen und wir können einen Probetag vereinbaren.
         </p>
-        <Button label="Probetag vereinbaren" url="mailto:hallo@kalk.space" />
+        <Button label="Sag Hallo!" url="mailto:hallo@kalk.space" />
       </ContentBox>
       <ContentBox mode="Full">
         <h2>FAQ</h2>
