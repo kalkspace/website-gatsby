@@ -5,7 +5,6 @@ import { ContentBox, MODE } from "../components/content-box/content-box";
 
 import * as styles from "./support.module.css";
 import { Button } from "../components/button/button";
-import BetterplaceWidget from "../components/betterplace-widget/betterplace-widget";
 
 const impactBoxes = [
   {
