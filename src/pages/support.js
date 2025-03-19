@@ -6,67 +6,36 @@ import { ContentBox, MODE } from "../components/content-box/content-box";
 import * as styles from "./support.module.css";
 import { Button } from "../components/button/button";
 
-const impactBoxes = [
-  {
-    icon: "🌱",
-    heading: "Community im Viertel",
-    copy: "Wir schaffen eine Anlaufstelle im Stadtteil, die Menschen verbindet und Begegnung ermöglicht.",
-  },
-  {
-    icon: "💻",
-    heading: "Digitale Bildung",
-    copy: "Workshops, Lerngruppen und Unterstützung bei der Orientierung im digitalen Raum – zugänglich für alle.",
-  },
-  {
-    icon: "🔧",
-    heading: "MakerSpace & DIY",
-    copy: "Raum zum Selbermachen, Werkzeuge zum Teilen und gemeinsame Projekte zum Mitmachen.",
-  },
-  {
-    icon: "🎵",
-    heading: "Kunst & Kultur",
-    copy: "Mit unserem DeepSpace bieten wir Raum für Kreativität: Electronic Music Lab, Jamsessions, Ausstellungen oder erste Auftritte angehender Künstler*innen – ein offener Raum zum Ausprobieren.",
-  },
-  {
-    icon: "🤝",
-    heading: "Austausch & Networking",
-    copy: 'Events wie das wöchentliche „Software frickeln für alle" oder das gelegentliche „Networking im Space" fördern den Wissensaustausch.',
-  },
-  {
-    icon: "♻️",
-    heading: "Nachhaltigkeit",
-    copy: "Ressourcenschonende Leihangebote wie unser LastenRad oder Werkzeuge machen gemeinsame Nutzung möglich.",
-  },
-];
-
-const memberBoxes = [
-  {
-    icon: "💸",
-    heading: "Einmalig oder regelmäßig spenden",
-    copy: "Jede Spende hilft uns, den Space zu erhalten und zu verbessern.",
-    button: "Bei Betterplace spenden",
-    link: "https://secure.betterplace.org/de/donate/platform/projects/83728",
-  },
-  {
-    icon: "🤝",
-    heading: "Fördermitgliedschaft",
-    copy: "Du möchtest den KalkSpace unterstützen, ohne aktiv teilzunehmen? Werde Fördermitglied und hilf uns mit einem selbstgewählten monatlichen oder jährlichen Beitrag.",
-    button: "Fördermitglied werden",
-  },
-  {
-    icon: "💙",
-    heading: "Mitglied werden",
-    copy: "Als Vereinsmitglied (10 € / Monat) erhältst du Zugang zum Space und kannst ihn aktiv mitgestalten. Werde Teil unserer Gemeinschaft und hilf mit, diesen besonderen Ort zu erhalten.",
-    button: "Mitglied werden",
-  },
-  {
-    icon: "🏢",
-    heading: "Coworking Mitgliedschaft",
-    copy: "Unterstütze uns durch eine Coworking-Mitgliedschaft.",
-    button: "Coworking entdecken",
-    link: "/coworking",
-  },
-];
+/**
+ * @param {{
+ *   heading: string
+ *   boxes: {
+ *     icon: string
+ *     heading: string
+ *     copy: string
+ *     button?: string
+ *     link?: string
+ *   }[]
+ * }} props
+ * @returns
+ */
+const FeatureGrid = ({ heading, boxes }) => (
+  <section>
+    <h2>{heading}</h2>
+    <div className={styles.boxCollection}>
+      {boxes.map((box, i) => (
+        <ContentBox mode={MODE.full} key={i}>
+          <h3 className={styles.boxHeading}>
+            <span>{box.icon}</span>
+            <span>{box.heading}</span>
+          </h3>
+          <p>{box.copy}</p>
+          {box.button && <Button label={box.button} url={box.link ?? ""} />}
+        </ContentBox>
+      ))}
+    </div>
+  </section>
+);
 
 const SupportPage = () => {
   return (
@@ -89,20 +58,42 @@ const SupportPage = () => {
           – unabhängig von finanziellen Mitteln.
         </p>
       </section>
-      <section>
-        <h2>Was wir bewirken</h2>
-        <div className={styles.boxCollection}>
-          {impactBoxes.map((box, i) => (
-            <ContentBox mode={MODE.full} key={i}>
-              <h3 className={styles.boxHeading}>
-                <span>{box.icon}</span>
-                <span>{box.heading}</span>
-              </h3>
-              <p>{box.copy}</p>
-            </ContentBox>
-          ))}
-        </div>
-      </section>
+
+      <FeatureGrid
+        heading="Was wir bewirken"
+        boxes={[
+          {
+            icon: "🌱",
+            heading: "Community im Viertel",
+            copy: "Wir schaffen eine Anlaufstelle im Stadtteil, die Menschen verbindet und Begegnung ermöglicht.",
+          },
+          {
+            icon: "💻",
+            heading: "Digitale Bildung",
+            copy: "Workshops, Lerngruppen und Unterstützung bei der Orientierung im digitalen Raum – zugänglich für alle.",
+          },
+          {
+            icon: "🔧",
+            heading: "MakerSpace & DIY",
+            copy: "Raum zum Selbermachen, Werkzeuge zum Teilen und gemeinsame Projekte zum Mitmachen.",
+          },
+          {
+            icon: "🎵",
+            heading: "Kunst & Kultur",
+            copy: "Mit unserem DeepSpace bieten wir Raum für Kreativität: Electronic Music Lab, Jamsessions, Ausstellungen oder erste Auftritte angehender Künstler*innen – ein offener Raum zum Ausprobieren.",
+          },
+          {
+            icon: "🤝",
+            heading: "Austausch & Vernetzung",
+            copy: "Events wie das wöchentliche „Software frickeln für alle“ oder das gelegentliche „Networking im Space“ fördern den Wissensaustausch.",
+          },
+          {
+            icon: "♻️",
+            heading: "Nachhaltigkeit",
+            copy: "Ressourcenschonende Leihangebote wie unser LastenRad oder Werkzeuge machen gemeinsame Nutzung möglich.",
+          },
+        ]}
+      />
       <section>
         <h2>Mit deiner Unterstützung können wir mehr erreichen</h2>
         <p>Mit einem größeren finanziellen Spielraum könnten wir:</p>
@@ -120,21 +111,42 @@ const SupportPage = () => {
           <li>Mehr gemeinnützige Community-Events veranstalten</li>
         </ul>
       </section>
-      <section>
-        <h2>Wie du uns unterstützen kannst</h2>
-        <div className={styles.boxCollection}>
-          {memberBoxes.map((box, i) => (
-            <ContentBox mode={MODE.full} innerClassName={styles.box} key={i}>
-              <h3 className={styles.boxHeading}>
-                <span>{box.icon}</span>
-                <span>{box.heading}</span>
-              </h3>
-              <p>{box.copy}</p>
-              <Button label={box.button} url={box.link ?? ""} />
-            </ContentBox>
-          ))}
-        </div>
-      </section>
+      <FeatureGrid
+        heading="Wie du uns unterstützen kannst"
+        boxes={[
+          {
+            icon: "💸",
+            heading: "Einmalig oder regelmäßig spenden",
+            copy: "Jede Spende hilft uns, den Space zu erhalten und zu verbessern.",
+            button: "Bei Betterplace spenden",
+            link: "https://secure.betterplace.org/de/donate/platform/projects/83728",
+          },
+          {
+            icon: "🤝",
+            heading: "Fördermitgliedschaft",
+            copy: "Du möchtest den KalkSpace unterstützen, ohne aktiv teilzunehmen? Werde Fördermitglied und hilf uns mit einem selbstgewählten monatlichen oder jährlichen Beitrag.",
+            button: "Fördermitglied werden",
+          },
+        ]}
+      />
+      <FeatureGrid
+        heading="Werde Teil des KalkSpace"
+        boxes={[
+          {
+            icon: "🧡",
+            heading: "Mitglied werden",
+            copy: "Als Vereinsmitglied erhältst du Zugang zum Space und kannst ihn aktiv mitgestalten. Werde Teil unserer Gemeinschaft und hilf mit, diesen besonderen Ort zu erhalten.",
+            button: "Mitglied werden",
+          },
+          {
+            icon: "🏢",
+            heading: "Coworking-Mitgliedschaft",
+            copy: "Du findest unser Konzept gut und möchtest dich aktiv als Coworking-Mitglied einbringen?",
+            button: "Coworking entdecken",
+            link: "/coworking",
+          },
+        ]}
+      />
     </Layout>
   );
 };
