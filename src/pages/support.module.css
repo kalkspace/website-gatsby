@@ -36,3 +36,14 @@
     margin-bottom: auto;
   }
 }
+
+.list {
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &.list li {
+    margin-bottom: 0;
+  }
+}

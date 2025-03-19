@@ -5,10 +5,13 @@ import { ContentBox, MODE } from "../components/content-box/content-box";
 
 import * as styles from "./support.module.css";
 import { Button } from "../components/button/button";
+import { StaticImage } from "gatsby-plugin-image";
+import { TitleBox } from "../components/title-box/title-box";
 
 /**
  * @param {{
  *   heading: string
+ *   mode?: MODE[keyof MODE]
  *   boxes: {
  *     icon: string
  *     heading: string
@@ -19,29 +22,46 @@ import { Button } from "../components/button/button";
  * }} props
  * @returns
  */
-const FeatureGrid = ({ heading, boxes }) => (
-  <section>
+const FeatureGrid = ({ heading, boxes, mode }) => (
+  <ContentBox mode={mode} columns>
     <h2>{heading}</h2>
-    <div className={styles.boxCollection}>
+    <ul>
       {boxes.map((box, i) => (
-        <ContentBox mode={MODE.full} key={i}>
+        <li key={i}>
           <h3 className={styles.boxHeading}>
             <span>{box.icon}</span>
             <span>{box.heading}</span>
           </h3>
           <p>{box.copy}</p>
           {box.button && <Button label={box.button} url={box.link ?? ""} />}
-        </ContentBox>
+        </li>
       ))}
-    </div>
-  </section>
+    </ul>
+  </ContentBox>
 );
 
 const SupportPage = () => {
   return (
-    <Layout>
-      <h1>Unterstütze den KalkSpace!</h1>
-      <section>
+    <Layout
+      heroImg={
+        <StaticImage
+          src={"../images/ELI_4719.jpg"}
+          alt="Platinen in Tierform und KalkSpace Flyer auf einem Holztisch"
+          placeholder="blurred"
+        />
+      }
+    >
+      <TitleBox>Unterstütze den KalkSpace!</TitleBox>
+      <ContentBox
+        mode={MODE.right}
+        sideImage={
+          <StaticImage
+            src={"../images/ELI_4722.png"}
+            alt="Einhorn-Platine"
+            placeholder="none"
+          />
+        }
+      >
         <h2>Warum wir deine Hilfe brauchen</h2>
         <p>
           Der KalkSpace ist mehr als ein Coworking Space. Wir sind ein
@@ -57,7 +77,12 @@ const SupportPage = () => {
           Machtverhältnisse hinterfragt werden und Teilhabe für alle möglich ist
           – unabhängig von finanziellen Mitteln.
         </p>
-      </section>
+        <Button label="Fördermitglied werden" />
+        <Button
+          label="Bei Betterplace spenden"
+          url="https://www.betterplace.org/de/projects/83728-kalkspace-offener-community-raum-in-kalk"
+        />
+      </ContentBox>
 
       <FeatureGrid
         heading="Was wir bewirken"
@@ -94,10 +119,19 @@ const SupportPage = () => {
           },
         ]}
       />
-      <section>
+      <ContentBox
+        mode={MODE.left}
+        sideImage={
+          <StaticImage
+            src={"../images/ELI_4573.jpg"}
+            alt="Mensch beim Löten einer Platine"
+            placeholder="none"
+          />
+        }
+      >
         <h2>Mit deiner Unterstützung können wir mehr erreichen</h2>
         <p>Mit einem größeren finanziellen Spielraum könnten wir:</p>
-        <ul>
+        <ul className={styles.list}>
           <li>
             Mehr kostenfreie Workshops und Bildungsangebote für den Stadtteil
             anbieten
@@ -110,9 +144,10 @@ const SupportPage = () => {
           </li>
           <li>Mehr gemeinnützige Community-Events veranstalten</li>
         </ul>
-      </section>
+      </ContentBox>
       <FeatureGrid
         heading="Wie du uns unterstützen kannst"
+        mode={MODE.center}
         boxes={[
           {
             icon: "💸",
@@ -131,6 +166,7 @@ const SupportPage = () => {
       />
       <FeatureGrid
         heading="Werde Teil des KalkSpace"
+        mode={MODE.right}
         boxes={[
           {
             icon: "🧡",

@@ -91,6 +91,7 @@
 
   .wrapper {
     flex-direction: row;
+    align-items: flex-end;
   }
 
   .wrapper.masonry {
@@ -113,6 +114,7 @@
   .mode-center .box,
   .mode-right .box {
     width: calc(50% - var(--masonry));
+    margin-bottom: 5rem;
   }
 
   .wrapper .box {
@@ -123,10 +125,8 @@
   .wrapper .side-image {
     position: relative;
     flex: 1;
-  }
-
-  .side-image > * {
-    margin-top: 10em;
+    display: flex;
+    justify-content: flex-end;
   }
 
   .mode-left .side-image {
