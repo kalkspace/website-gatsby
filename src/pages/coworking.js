@@ -80,11 +80,14 @@ const CoworkingPage = () => {
           />
         }
       >
+        <p>Du magst dir den Space anschauen und uns kennenlernen?</p>
         <p>
-          Du magst dir den Space anschauen und uns kennenlernen?
-        </p>
-        <p>
-	  Komm gerne zu unserem wöchentlichen Mittagsplenum und lerne uns kennen. Die kommenden Termine findest du bei unseren <Link to="/events">Events</Link>. Dort besprechen wir was im Space gerade ansteht, kochen oft zusammen und tauschen uns aus. Du kannst dir einen Eindruck vom Space und den Menschen hier verschaffen und wir können einen Probetag vereinbaren.
+          Komm gerne zu unserem wöchentlichen Mittagsplenum und lerne uns
+          kennen. Die kommenden Termine findest du bei unseren{" "}
+          <Link to="/events">Events</Link>. Dort besprechen wir was im Space
+          gerade ansteht, kochen oft zusammen und tauschen uns aus. Du kannst
+          dir einen Eindruck vom Space und den Menschen hier verschaffen und wir
+          können einen Probetag vereinbaren.
         </p>
         <Button label="Sag Hallo!" url="mailto:hallo@kalk.space" />
       </ContentBox>

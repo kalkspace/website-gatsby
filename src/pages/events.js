@@ -121,7 +121,7 @@ const EventPage = () => {
           return (
             <ContentBox
               innerClassName={styles.event}
-              mode={i % 2 == 0 ? "Left" : "Right"}
+              mode={i % 2 === 0 ? "Left" : "Right"}
               masonry
             >
               <p

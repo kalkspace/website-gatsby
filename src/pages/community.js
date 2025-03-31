@@ -63,7 +63,8 @@ const CommunityPage = () => {
       >
         <h2>Programm</h2>
         <p>
-          Im KalkSpace finden wechselnd verschiedene Veranstaltungen statt. Du findest die nächsten Termine im <Link to="/events">Kalender</Link>.
+          Im KalkSpace finden wechselnd verschiedene Veranstaltungen statt. Du
+          findest die nächsten Termine im <Link to="/events">Kalender</Link>.
         </p>
       </ContentBox>
       <ContentBox
