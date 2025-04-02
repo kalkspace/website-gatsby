@@ -121,9 +121,9 @@ const CommunityPage = () => {
       >
         <h2>Mitmachen:</h2>
         <p>
-          Eine Vereinsmitgliedschaft kostet 60€ im Jahr, bzw. ist kostenlos wenn
-          du die finanziellen Mittel nicht hast. Du bekommst dafür die Schlüssel
-          und das Recht, den Space aktiv mitzugestalten.
+          Eine Vereinsmitgliedschaft kostet 10€ im Monat, bzw. ist kostenlos
+          wenn du die finanziellen Mittel nicht hast. Du bekommst dafür die
+          Schlüssel und das Recht, den Space aktiv mitzugestalten.
         </p>
         <p>
           Hört sich das gut an? Wir freuen uns immer über helfende Hände und

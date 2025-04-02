@@ -51,13 +51,13 @@ const CoworkingPage = () => {
         <h2>Wir haben 4 Coworking Modelle:</h2>
         <ul>
           <li>
-            <h3>Fix (250€)</h3> Eigener, fester Schreibtisch;
+            <h3>Fix (350€)</h3> Eigener, fester Schreibtisch;
           </li>
           <li>
-            <h3>Flex (100€)</h3> Flexibel wählbarer Schreibtisch;
+            <h3>Flex (150€)</h3> Flexibel wählbarer Schreibtisch;
           </li>
           <li>
-            <h3>Flex10 (50€)</h3> Flexibel wählbarer Schreibtisch; 10 Tage im
+            <h3>Flex10 (80€)</h3> Flexibel wählbarer Schreibtisch; 10 Tage im
             Monat;
           </li>
           <li>
