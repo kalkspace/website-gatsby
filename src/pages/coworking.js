@@ -51,21 +51,20 @@ const CoworkingPage = () => {
         <h2>Wir haben 4 Coworking Modelle:</h2>
         <ul>
           <li>
-            <h3>Fix (250€)</h3> Eigener, fester Schreibtisch;
+            <h3>Fix (350€)</h3> Eigener, fester Schreibtisch;
           </li>
           <li>
-            <h3>Flex (100€)</h3> Flexibel wählbarer Schreibtisch;
+            <h3>Flex (150€)</h3> Flexibel wählbarer Schreibtisch;
           </li>
           <li>
-            <h3>Flex10 (50€)</h3> Flexibel wählbarer Schreibtisch; 10 Tage im
+            <h3>Flex10 (80€)</h3> Flexibel wählbarer Schreibtisch; 10 Tage im
             Monat;
           </li>
           <li>
             <h3>Solidarity</h3> Auch wenn du die Coworkingbeiträge nicht
             aufbringen kannst, kannst du trotzdem vollwertiges Vereinsmitglied
-            mit allen Rechten und Pflichten werden. Such dir ein
-            Coworking-Modell aus und sprich den{" "}
-            <a href="mailto:vorstand@kalk.space">Vorstand</a> kurz an.
+            mit allen Rechten und Pflichten werden. Sprich gerne den{" "}
+            <a href="mailto:vorstand@kalk.space">Vorstand</a> an.
           </li>
         </ul>
       </ContentBox>
