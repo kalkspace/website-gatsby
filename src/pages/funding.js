@@ -80,7 +80,7 @@ const FundingPage = () => {
           – unabhängig von finanziellen Mitteln.
         </p>
         <Button
-          label="Fördermitglied werden"
+          label="Fördermitglied werden 💌️"
           url={mailtoUrl({
             recipient: "finanzen@kalk.space",
             subject: "Fördermitgliedschaft",
