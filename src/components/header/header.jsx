@@ -11,6 +11,7 @@ const links = [
   { url: "/blog", title: "Blog" },
   { url: "/events", title: "Events" },
   { url: "https://discuss.kalk.space/", title: "Forum" },
+  { url: "/funding", title: "Unterstützen" },
 ];
 
 const MenuOpenButton = () => (
