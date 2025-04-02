@@ -7,11 +7,13 @@ import * as styles from "./funding.module.css";
 import { Button } from "../components/button/button";
 import { StaticImage } from "gatsby-plugin-image";
 import { TitleBox } from "../components/title-box/title-box";
+import { mailtoUrl } from "../utils/url";
 
 /**
  * @param {{
  *   heading: string
  *   mode?: MODE[keyof MODE]
+ *   sideImage?: JSX.Element
  *   boxes: {
  *     icon: string
  *     heading: string
@@ -20,10 +22,10 @@ import { TitleBox } from "../components/title-box/title-box";
  *     link?: string
  *   }[]
  * }} props
- * @returns
+ * @returns {JSX.Element}
  */
-const FeatureGrid = ({ heading, boxes, mode }) => (
-  <ContentBox mode={mode} columns>
+const FeatureGrid = ({ heading, boxes, mode, sideImage }) => (
+  <ContentBox mode={mode} sideImage={sideImage} columns>
     <h2>{heading}</h2>
     <ul>
       {boxes.map((box, i) => (
@@ -77,7 +79,14 @@ const FundingPage = () => {
           Machtverhältnisse hinterfragt werden und Teilhabe für alle möglich ist
           – unabhängig von finanziellen Mitteln.
         </p>
-        <Button label="Fördermitglied werden" />
+        <Button
+          label="Fördermitglied werden"
+          url={mailtoUrl({
+            recipient: "finanzen@kalk.space",
+            subject: "Fördermitgliedschaft",
+            body: "Hallo KalkSpace,\n\nich möchte gerne Fördermitglied werden und euch mit dem folgenden monatlichen Betrag unterstützen:\nBitte sendet mir mehr Informationen zu.",
+          })}
+        />
         <Button
           label="Bei Betterplace spenden"
           url="https://www.betterplace.org/de/projects/83728-kalkspace-offener-community-raum-in-kalk"
@@ -158,21 +167,45 @@ const FundingPage = () => {
           },
           {
             icon: "🤝",
-            heading: "Fördermitgliedschaft",
+            heading: "Fördermitgliedschaft️",
             copy: "Du möchtest den KalkSpace unterstützen, ohne aktiv teilzunehmen? Werde Fördermitglied und hilf uns mit einem selbstgewählten monatlichen oder jährlichen Beitrag.",
-            button: "Fördermitglied werden",
+            button: "Fördermitglied werden 💌️",
+            link: mailtoUrl({
+              recipient: "finanzen@kalk.space",
+              subject: "Fördermitgliedschaft",
+              body: "Hallo KalkSpace,\n\nich möchte gerne Fördermitglied werden und euch mit dem folgenden monatlichen Betrag unterstützen:\nBitte sendet mir mehr Informationen zu.",
+            }),
+          },
+          {
+            icon: "🏆",
+            heading: "Sponsor*in werden",
+            copy: "Unternehmen können den KalkSpace als Sponsor unterstützen. Wir bieten verschiedene Partnerschaften und freuen uns über Anfragen.",
+            button: "Sponsoring-Anfrage",
+            link: mailtoUrl({
+              recipient: "finanzen@kalk.space",
+              subject: "Sponsoring-Anfrage",
+              body: "Hallo KalkSpace,\n\nwir würden den KalkSpace gerne als Sponsor unterstützen.\n\nBitte nehmt Kontakt mit uns auf und sendet uns weitere Informationen zu verfügbaren Sponsoring-Optionen.",
+            }),
           },
         ]}
       />
       <FeatureGrid
         heading="Werde Teil des KalkSpace"
         mode={MODE.right}
+        sideImage={
+          <StaticImage
+            src={"../images/electronic_music_lab.jpg"}
+            alt="Zwei Menschen machen elektronische Musik"
+            placeholder="none"
+          />
+        }
         boxes={[
           {
             icon: "🧡",
             heading: "Mitglied werden",
             copy: "Als Vereinsmitglied erhältst du Zugang zum Space und kannst ihn aktiv mitgestalten. Werde Teil unserer Gemeinschaft und hilf mit, diesen besonderen Ort zu erhalten.",
-            button: "Mitglied werden",
+            button: "Mitglied werden 💌️",
+            link: "mailto:hallo@kalk.space",
           },
           {
             icon: "🏢",
