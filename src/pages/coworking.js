@@ -63,9 +63,8 @@ const CoworkingPage = () => {
           <li>
             <h3>Solidarity</h3> Auch wenn du die Coworkingbeiträge nicht
             aufbringen kannst, kannst du trotzdem vollwertiges Vereinsmitglied
-            mit allen Rechten und Pflichten werden. Such dir ein
-            Coworking-Modell aus und sprich den{" "}
-            <a href="mailto:vorstand@kalk.space">Vorstand</a> kurz an.
+            mit allen Rechten und Pflichten werden. Sprich gerne den{" "}
+            <a href="mailto:vorstand@kalk.space">Vorstand</a> an.
           </li>
         </ul>
       </ContentBox>
@@ -80,11 +79,14 @@ const CoworkingPage = () => {
           />
         }
       >
+        <p>Du magst dir den Space anschauen und uns kennenlernen?</p>
         <p>
-          Du magst dir den Space anschauen und uns kennenlernen?
-        </p>
-        <p>
-	  Komm gerne zu unserem wöchentlichen Mittagsplenum und lerne uns kennen. Die kommenden Termine findest du bei unseren <Link to="/events">Events</Link>. Dort besprechen wir was im Space gerade ansteht, kochen oft zusammen und tauschen uns aus. Du kannst dir einen Eindruck vom Space und den Menschen hier verschaffen und wir können einen Probetag vereinbaren.
+          Komm gerne zu unserem wöchentlichen Mittagsplenum und lerne uns
+          kennen. Die kommenden Termine findest du bei unseren{" "}
+          <Link to="/events">Events</Link>. Dort besprechen wir was im Space
+          gerade ansteht, kochen oft zusammen und tauschen uns aus. Du kannst
+          dir einen Eindruck vom Space und den Menschen hier verschaffen und wir
+          können einen Probetag vereinbaren.
         </p>
         <Button label="Sag Hallo!" url="mailto:hallo@kalk.space" />
       </ContentBox>
