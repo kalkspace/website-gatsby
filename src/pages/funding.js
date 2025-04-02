@@ -3,7 +3,7 @@ import * as React from "react";
 import { Layout } from "../components/layout/layout";
 import { ContentBox, MODE } from "../components/content-box/content-box";
 
-import * as styles from "./support.module.css";
+import * as styles from "./funding.module.css";
 import { Button } from "../components/button/button";
 import { StaticImage } from "gatsby-plugin-image";
 import { TitleBox } from "../components/title-box/title-box";
@@ -40,7 +40,7 @@ const FeatureGrid = ({ heading, boxes, mode }) => (
   </ContentBox>
 );
 
-const SupportPage = () => {
+const FundingPage = () => {
   return (
     <Layout
       heroImg={
@@ -187,4 +187,4 @@ const SupportPage = () => {
   );
 };
 
-export default SupportPage;
+export default FundingPage;
