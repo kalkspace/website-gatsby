@@ -87,16 +87,14 @@ const IndexPage = ({ data }) => {
           />
         }
       >
-        <h2>Corona</h2>
+        <h2>Unterstütze den KalkSpace</h2>
         <p>
-          Als Coworkingspace betrifft uns die Coronapandemie selbstverständlich
-          relativ stark.
+          Die finanzielle Basis des KalkSpace bilden die Mitgliedsbeiträge.
+          Damit wir unser Angebot aufrechterhalten und auszubauen können, sind
+          wir zusätzlich auf Fördermitgliedschaften und Spenden angewiesen. Wir
+          freuen uns über jede Unterstützung!
         </p>
-        <p>Unsere Regelungen zur Coronapandemie findest du in unserem Forum.</p>
-        <Button
-          label="Mehr"
-          url="https://discuss.kalk.space/t/coronaregelungen/245"
-        />
+        <Button label="Mehr" url="/funding" />
       </ContentBox>
       <ContentBox
         mode="Left"
