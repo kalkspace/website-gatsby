@@ -6,4 +6,5 @@
   text-transform: uppercase;
   text-decoration: none;
   align-self: center;
+  display: inline-block;
 }
