@@ -43,6 +43,9 @@ const FeatureGrid = ({ heading, boxes, mode, sideImage }) => (
 );
 
 const FundingPage = () => {
+  const betterplaceDonationUrl =
+    "https://secure.betterplace.org/de/donate/platform/projects/83728";
+
   return (
     <Layout
       heroImg={
@@ -87,10 +90,7 @@ const FundingPage = () => {
             body: "Hallo KalkSpace,\n\nich möchte gerne Fördermitglied werden und euch mit dem folgenden monatlichen Betrag unterstützen:\nBitte sendet mir mehr Informationen zu.",
           })}
         />
-        <Button
-          label="Bei Betterplace spenden"
-          url="https://www.betterplace.org/de/projects/83728-kalkspace-offener-community-raum-in-kalk"
-        />
+        <Button label="Bei Betterplace spenden" url={betterplaceDonationUrl} />
       </ContentBox>
 
       <FeatureGrid
@@ -163,7 +163,7 @@ const FundingPage = () => {
             heading: "Einmalig oder regelmäßig spenden",
             copy: "Jede Spende hilft uns, den Space zu erhalten und zu verbessern.",
             button: "Bei Betterplace spenden",
-            link: "https://secure.betterplace.org/de/donate/platform/projects/83728",
+            link: betterplaceDonationUrl,
           },
           {
             icon: "🤝",
