@@ -1,6 +1,6 @@
 import React from "react";
 import { Map } from "./map";
-import styles from"./map.stories.module.css"
+import styles from "./map.stories.module.css";
 
 export default {
   title: "Map",
@@ -30,5 +30,5 @@ WithPopup.args = {
   zoom: 16,
   mapClassName: styles.mapContainer,
   scrollWheelZoom: false,
-  popupText: "Innenhof, dann nach rechts. Dritte Tür."
+  popupText: "Innenhof, dann nach rechts. Dritte Tür.",
 };

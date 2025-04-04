@@ -70,7 +70,7 @@ export const Map = ({
       map.remove();
       logoElement.remove();
     };
-  }, [lng, lat, zoom, scrollWheelZoom]);
+  }, [lng, lat, zoom, scrollWheelZoom, popupText]);
 
   if (typeof window === undefined) {
     return <></>;
