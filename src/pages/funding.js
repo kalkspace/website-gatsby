@@ -44,7 +44,7 @@ const FeatureGrid = ({ heading, boxes, mode, sideImage }) => (
 
 const FundingPage = () => {
   const betterplaceDonationUrl =
-    "https://secure.betterplace.org/de/donate/platform/projects/83728";
+    "https://secure.betterplace.org/de/donate/platform/projects/152160";
 
   return (
     <Layout
