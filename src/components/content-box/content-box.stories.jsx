@@ -53,11 +53,11 @@ const LayoutTemplate = (args) => (
   </Layout>
 );
 
-export const InLayout = LayoutTemplate.bind({})
+export const InLayout = LayoutTemplate.bind({});
 InLayout.args = {
   mode: MODE.right,
   sideImage: <img src={exampleImage} />,
 };
 InLayout.parameters = {
   layout: "fullscreen",
-}
+};
