@@ -57,6 +57,13 @@ const EventPage = () => {
   React.useEffect(() => {
     (async () => {
       try {
+        const eventsURL = new URL(
+          "https://discuss.kalk.space/discourse-post-event/events.json"
+        );
+
+        const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000);
+        eventsURL.searchParams.set("after", yesterday.toISOString());
+
         /** @type {[EventsResponse, CategoriesResponse]} */
         const [
           { events },
@@ -64,9 +71,7 @@ const EventPage = () => {
             category_list: { categories },
           },
         ] = await Promise.all([
-          fetch(
-            "https://discuss.kalk.space/discourse-post-event/events.json"
-          ).then((r) => r.json()),
+          fetch(eventsURL).then((r) => r.json()),
           fetch(
             "https://discuss.kalk.space/categories.json?include_subcategories=true"
           ).then((r) => r.json()),
