@@ -21,7 +21,7 @@ force = true
 
 [[redirects]]
 from = "/events.ics"
-to = "https://ical.k3s.kalk.space/"
+to = "https://discuss.kalk.space/discourse-post-event/events.ics?order=desc"
 status = 200
 force = true
 
