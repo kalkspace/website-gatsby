@@ -81,16 +81,10 @@ const EventPage = () => {
           categories.flatMap(flattenCategories).map((c) => [c.id, c])
         );
 
-        const futureEvents = events
-          .filter(function (event) {
-            // use yesterday's date for comparison so we don't filter out currently running events
-            const yesterday = new Date(Date.now() - 24 * 60 * 60 * 1000);
-            return new Date(event.starts_at) > yesterday;
-          })
-          .map((event) => ({
-            ...event,
-            category: categoryDB.get(event.category_id),
-          }));
+        const futureEvents = events.map((event) => ({
+          ...event,
+          category: categoryDB.get(event.category_id),
+        }));
 
         futureEvents.sort(function (a, b) {
           if (a.starts_at < b.starts_at) {
