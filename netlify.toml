@@ -26,13 +26,13 @@ status = 200
 force = true
 
 [[redirects]]
-from = "/cryptoparty-handout"
-to = "https://md.chaosdorf.de/s/GclNE4YZL#"
-status = 301
-force = true
-
-[[redirects]]
 from = "/.well-known/matrix/*"
 to = "https://matrix.kalk.space/.well-known/matrix/:splat"
 status = 200
+force = true
+
+[[redirects]]
+from = "/antrag"
+to = "https://kalkspace.webling.ch/forms/memberform/3b2469ccc03be4f5a4d1"
+status = 301
 force = true
