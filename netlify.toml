@@ -1,6 +1,9 @@
 [build]
 functions = "src/functions"
 
+[build.environment]
+PYTHON_VERSION = "system"
+
 [[redirects]]
 from = "https://kalkspace.de/*"
 to = "https://kalk.space/:splat"
