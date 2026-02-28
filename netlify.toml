@@ -39,3 +39,9 @@ from = "/antrag"
 to = "https://kalkspace.webling.ch/forms/memberform/3b2469ccc03be4f5a4d1"
 status = 301
 force = true
+
+[[redirects]]
+from = "/raspi"
+to = "https://discuss.kalk.space/t/raspberry-pi-workshop-1/1586"
+status = 301
+force = true
