@@ -14,7 +14,9 @@ export default async (req: Request, context: Context) => {
   }
 
   const { z, x, y } = context.params;
+  console.log("before getTile", { z, x, y });
   const tile = await getTile(Number(z), Number(x), Number(y));
+  console.log({ tile });
   if (!tile) {
     return new Response("Tile not found", { status: 404 });
   }
