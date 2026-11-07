@@ -42,6 +42,6 @@ force = true
 
 [[redirects]]
 from = "/raspi"
-to = "https://discuss.kalk.space/t/raspberry-pi-workshop-7/1734"
+to = "https://discuss.kalk.space/t/raspberry-pi-workshop-8/1743"
 status = 301
 force = true
